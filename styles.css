@@ -102,6 +102,8 @@ input:focus { border-color:var(--lime-dark); box-shadow:0 0 0 3px rgba(200,244,6
 .equation-block { margin-top:15px; padding:17px; border:1px solid var(--line); border-radius:14px; background:#fafaf7; }
 .equation-block:first-child { margin-top:0; }
 .equation-block > strong { display:block; margin-bottom:13px; color:var(--coral); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+.input-mode-switch { width:max-content; max-width:100%; margin:0 0 15px; }
+.input-mode-switch + .equation-inputs, .input-mode-switch + .field-grid { margin-top:0; }
 .graph-toggle { display:flex; align-items:center; gap:10px; width:max-content; margin-top:24px; cursor:pointer; }
 .graph-toggle input { width:18px; height:18px; margin:0; accent-color:var(--ink); }
 .graph-toggle span { display:inline; margin:0; color:var(--ink); font-size:12px; }

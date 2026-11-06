@@ -6,7 +6,7 @@ const translations = {
     exact: "根式", decimal: "小数", vertexForm: "顶点式", coefficientA: "系数 a", coefficientB: "系数 b", coefficientC: "系数 c", constantC: "常数 c", constantD: "常数 d", solve: "计算答案", decimalRoots: "小数根", exactInteger: "精确整数",
     sideA: "边 a", sideB: "边 b", sideC: "边 c", angleC: "角 C（度）", findArea: "求面积", findSide: "求边 c", findAngle: "求角 C", calculate: "计算", calculateBoth: "计算 nCr 与 nPr", equation1: "方程 1", equation2: "方程 2", xCoefficient: "x 系数", yCoefficient: "y 系数", systemConstant: "常数", solveSystem: "解联立方程",
     coordinateGeometry: "坐标几何", pointA: "点 A", pointB: "点 B", pointC: "点 C", findCenters: "计算四心与圆", centroid: "重心 G", circumcenter: "外心 O", incenter: "内心 I", orthocenter: "垂心 H", circumcircle: "外接圆", incircle: "内切圆", radius: "半径", showGraph: "显示坐标图", vertex: "顶点", axisOfSymmetry: "对称轴", triangleDiagramCaption: "边 a、b、c 分别位于角 A、B、C 的对面",
-    parabolaLineHint: "输入抛物线和直线，求实数交点并显示坐标图。", circleLineHint: "输入圆心、半径和一般式直线，求交点并显示坐标图。", parabola: "抛物线", straightLine: "直线", circle: "圆", slopeM: "斜率 m", interceptK: "截距 k", centerH: "圆心 h", centerK: "圆心 k", radiusR: "半径 r", lineA: "系数 A", lineB: "系数 B", lineC: "常数 C", findIntersections: "求交点", intersection: "交点", intersections: "交点", tangentPoint: "切点", noRealIntersections: "没有实数交点。", invalidLine: "直线的 A 和 B 不能同时为 0。", invalidRadius: "半径必须大于 0。",
+    parabolaLineHint: "输入抛物线，并选择直线的斜截式或一般式。", circleLineHint: "选择圆心与半径或圆的一般式，再输入直线求交点。", parabola: "抛物线", straightLine: "直线", circle: "圆", slopeIntercept: "斜截式", generalForm: "一般式", centerRadius: "圆心＋半径", circleGeneralForm: "圆的一般式", slopeM: "斜率 m", interceptK: "截距 k", centerH: "圆心 h", centerK: "圆心 k", radiusR: "半径 r", circleD: "系数 D", circleE: "系数 E", circleF: "常数 F", lineA: "系数 A", lineB: "系数 B", lineC: "常数 C", findIntersections: "求交点", intersection: "交点", intersections: "交点", tangentPoint: "切点", noRealIntersections: "没有实数交点。", invalidLine: "直线的 A 和 B 不能同时为 0。", invalidRadius: "半径必须大于 0。", invalidCircleGeneral: "这个一般式不能构成半径大于 0 的实圆。", derivedCenter: "换算圆心",
     footerText: "计算结果仅供学习与核对，请记得写出步骤。", answer: "答案", copy: "复制", copyNumber: "复制纯数值", copied: "已复制", steps: "步骤", discriminant: "判别式", noLinear: "a 不能是 0；否则这不是二次方程。", noCubic: "a 不能是 0；否则这不是三次方程。", invalidNumber: "请填写所有数字。", noSolution: "此联立方程无解。", infiniteSolutions: "此联立方程有无限多个解。", invalidPoints: "三个点必须互不共线，才能构成三角形。", triangleError: "三边必须大于 0，并满足任意两边之和大于第三边。", cosineError: "请输入有效的正边长；角 C 必须在 0° 与 180° 之间。", combiError: "n 与 r 必须是非负整数，而且 r ≤ n。", area: "面积", semiperimeter: "半周长", permutation: "排列", combination: "组合", complex: "复数根"
   },
   en: {
@@ -16,7 +16,7 @@ const translations = {
     exact: "Exact", decimal: "Decimal", vertexForm: "Vertex form", coefficientA: "Coefficient a", coefficientB: "Coefficient b", coefficientC: "Coefficient c", constantC: "Constant c", constantD: "Constant d", solve: "Solve", decimalRoots: "Decimal roots", exactInteger: "Exact integer",
     sideA: "Side a", sideB: "Side b", sideC: "Side c", angleC: "Angle C (degrees)", findArea: "Find area", findSide: "Find side c", findAngle: "Find angle C", calculate: "Calculate", calculateBoth: "Calculate nCr & nPr", equation1: "Equation 1", equation2: "Equation 2", xCoefficient: "x coefficient", yCoefficient: "y coefficient", systemConstant: "Constant", solveSystem: "Solve equations",
     coordinateGeometry: "Coordinate geometry", pointA: "Point A", pointB: "Point B", pointC: "Point C", findCenters: "Find centres & circles", centroid: "Centroid G", circumcenter: "Circumcenter O", incenter: "Incenter I", orthocenter: "Orthocenter H", circumcircle: "Circumcircle", incircle: "Incircle", radius: "Radius", showGraph: "Show coordinate graph", vertex: "Vertex", axisOfSymmetry: "Axis of symmetry", triangleDiagramCaption: "Sides a, b and c lie opposite angles A, B and C respectively",
-    parabolaLineHint: "Enter a parabola and a line to find real intersections and plot them.", circleLineHint: "Enter a centre, radius and general-form line to find and plot intersections.", parabola: "Parabola", straightLine: "Line", circle: "Circle", slopeM: "Slope m", interceptK: "Intercept k", centerH: "Centre h", centerK: "Centre k", radiusR: "Radius r", lineA: "Coefficient A", lineB: "Coefficient B", lineC: "Constant C", findIntersections: "Find intersections", intersection: "Intersection", intersections: "Intersections", tangentPoint: "Tangent point", noRealIntersections: "There are no real intersections.", invalidLine: "Line coefficients A and B cannot both be 0.", invalidRadius: "The radius must be greater than 0.",
+    parabolaLineHint: "Enter a parabola, then choose slope-intercept or general form for the line.", circleLineHint: "Choose centre and radius or the circle's general form, then enter a line.", parabola: "Parabola", straightLine: "Line", circle: "Circle", slopeIntercept: "Slope-intercept", generalForm: "General form", centerRadius: "Centre & radius", circleGeneralForm: "Circle general form", slopeM: "Slope m", interceptK: "Intercept k", centerH: "Centre h", centerK: "Centre k", radiusR: "Radius r", circleD: "Coefficient D", circleE: "Coefficient E", circleF: "Constant F", lineA: "Coefficient A", lineB: "Coefficient B", lineC: "Constant C", findIntersections: "Find intersections", intersection: "Intersection", intersections: "Intersections", tangentPoint: "Tangent point", noRealIntersections: "There are no real intersections.", invalidLine: "Line coefficients A and B cannot both be 0.", invalidRadius: "The radius must be greater than 0.", invalidCircleGeneral: "This general form does not define a real circle with radius greater than 0.", derivedCenter: "Derived centre",
     footerText: "Use results to learn and check your work—remember to show your steps.", answer: "Answer", copy: "Copy", copyNumber: "Copy numeric value", copied: "Copied", steps: "Working", discriminant: "Discriminant", noLinear: "a cannot be 0; otherwise this is not a quadratic equation.", noCubic: "a cannot be 0; otherwise this is not a cubic equation.", invalidNumber: "Please enter every number.", noSolution: "This system has no solution.", infiniteSolutions: "This system has infinitely many solutions.", invalidPoints: "The three points must be non-collinear to form a triangle.", triangleError: "All sides must be positive and any two sides must add to more than the third.", cosineError: "Enter valid positive side lengths; angle C must be between 0° and 180°.", combiError: "n and r must be non-negative integers, with r ≤ n.", area: "Area", semiperimeter: "Semi-perimeter", permutation: "Permutation", combination: "Combination", complex: "Complex roots"
   }
 };
@@ -24,6 +24,8 @@ const translations = {
 let lang = "zh";
 let answerFormat = "exact";
 let cosineMode = "side";
+let parabolaLineMode = "slope";
+let circleInputMode = "center";
 const t = (key) => translations[lang][key] || key;
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -70,6 +72,29 @@ $$('[data-cos-mode]').forEach((button) => button.addEventListener("click", () =>
   updateCosineLabel();
   solveCosine();
 }));
+
+function setParabolaLineMode(mode) {
+  parabolaLineMode = mode;
+  $$('[data-pl-line-mode]').forEach((button) => button.classList.toggle('active', button.dataset.plLineMode === mode));
+  $('#parabolaSlopeLine').classList.toggle('hidden', mode !== 'slope');
+  $('#parabolaGeneralLine').classList.toggle('hidden', mode !== 'general');
+  $('#parabolaSlopeLine').querySelectorAll('input').forEach((input) => { input.disabled = mode !== 'slope'; });
+  $('#parabolaGeneralLine').querySelectorAll('input').forEach((input) => { input.disabled = mode !== 'general'; });
+  solveParabolaLine();
+}
+
+function setCircleInputMode(mode) {
+  circleInputMode = mode;
+  $$('[data-circle-input-mode]').forEach((button) => button.classList.toggle('active', button.dataset.circleInputMode === mode));
+  $('#circleCenterInput').classList.toggle('hidden', mode !== 'center');
+  $('#circleGeneralInput').classList.toggle('hidden', mode !== 'general');
+  $('#circleCenterInput').querySelectorAll('input').forEach((input) => { input.disabled = mode !== 'center'; });
+  $('#circleGeneralInput').querySelectorAll('input').forEach((input) => { input.disabled = mode !== 'general'; });
+  solveCircleLine();
+}
+
+$$('[data-pl-line-mode]').forEach((button) => button.addEventListener('click', () => setParabolaLineMode(button.dataset.plLineMode)));
+$$('[data-circle-input-mode]').forEach((button) => button.addEventListener('click', () => setCircleInputMode(button.dataset.circleInputMode)));
 
 function updateCosineLabel() {
   const span = $('#cosThirdLabel span');
@@ -398,29 +423,62 @@ function intersectionText(points) {
 }
 function solveParabolaLine(event) {
   event?.preventDefault();
-  const a=n('#pla'), b=n('#plb'), c=n('#plc'), m=n('#plm'), k=n('#plk');
-  if (![a,b,c,m,k].every(Number.isFinite)) { $('#parabolaLineGraph').innerHTML=''; return resultBox('#parabolaLineResult',t('invalidNumber'),'',true); }
+  const a=n('#pla'), b=n('#plb'), c=n('#plc');
+  let lineA, lineB, lineC, lineDescription;
+  if (parabolaLineMode === 'slope') {
+    const m=n('#plm'), k=n('#plk');
+    if (![a,b,c,m,k].every(Number.isFinite)) { $('#parabolaLineGraph').innerHTML=''; return resultBox('#parabolaLineResult',t('invalidNumber'),'',true); }
+    lineA=m; lineB=-1; lineC=-k;
+    lineDescription=`y = ${fmt(m)}x${signTerm(k)}`;
+  } else {
+    const A=n('#plga'), B=n('#plgb'), C=n('#plgc');
+    if (![a,b,c,A,B,C].every(Number.isFinite)) { $('#parabolaLineGraph').innerHTML=''; return resultBox('#parabolaLineResult',t('invalidNumber'),'',true); }
+    lineA=A; lineB=B; lineC=-C;
+    lineDescription=`${fmt(A)}x${signedMonomial(B,'y')}${signedMonomial(C)} = 0`;
+  }
   if (a === 0) { $('#parabolaLineGraph').innerHTML=''; return resultBox('#parabolaLineResult',t('noLinear'),'',true); }
-  const B=b-m, C=c-k, D=B*B-4*a*C, eps=1e-11*Math.max(1,Math.abs(B*B),Math.abs(4*a*C));
+  if (Math.abs(lineA) < 1e-12 && Math.abs(lineB) < 1e-12) { $('#parabolaLineGraph').innerHTML=''; return resultBox('#parabolaLineResult',t('invalidLine'),'',true); }
   let points=[];
-  if (D > eps) {
-    const roots=[(-B-Math.sqrt(D))/(2*a),(-B+Math.sqrt(D))/(2*a)].sort((x,y)=>x-y);
-    points=roots.map(x=>({x,y:m*x+k}));
-  } else if (Math.abs(D) <= eps) {
-    const x=-B/(2*a); points=[{x,y:m*x+k}];
+  let working;
+  if (Math.abs(lineB) < 1e-12) {
+    const x=lineC/lineA, y=a*x*x+b*x+c;
+    points=[{x,y}];
+    working=`${lineDescription}<br>x = ${fmt(x)}`;
+  } else {
+    const qa=lineB*a, qb=lineA+lineB*b, qc=lineB*c-lineC;
+    const D=qb*qb-4*qa*qc, eps=1e-11*Math.max(1,Math.abs(qb*qb),Math.abs(4*qa*qc));
+    if (D > eps) {
+      const roots=[(-qb-Math.sqrt(D))/(2*qa),(-qb+Math.sqrt(D))/(2*qa)].sort((x,y)=>x-y);
+      points=roots.map(x=>({x,y:a*x*x+b*x+c}));
+    } else if (Math.abs(D) <= eps) {
+      const x=-qb/(2*qa); points=[{x,y:a*x*x+b*x+c}];
+    }
+    working=`${lineDescription}<br>${t('discriminant')} Δ = ${fmt(D)}<br>${fmt(qa)}x²${signedMonomial(qb,'x')}${signedMonomial(qc)} = 0`;
   }
   const h=-b/(2*a), xCandidates=[h-4,h+4,h,...points.map(point=>point.x)];
   const xMin=Math.min(...xCandidates)-1, xMax=Math.max(...xCandidates)+1;
   const parabola=Array.from({length:181},(_,index)=>{const x=xMin+(xMax-xMin)*index/180;return{x,y:a*x*x+b*x+c};});
-  const line=[{x:xMin,y:m*xMin+k},{x:xMax,y:m*xMax+k}];
-  const bounds=graphBounds([...parabola.map(p=>p.x),...line.map(p=>p.x)],[...parabola.map(p=>p.y),...line.map(p=>p.y)]);
-  renderCoordinateGraph('#parabolaLineGraph',{toggle:'#parabolaLineGraphToggle',bounds,curves:[{points:parabola,color:'#ff6b5f'},{points:line,color:'#4f7cff'}],points:points.map((point,index)=>({...point,label:`P${points.length>1?index+1:''}`})),legend:[{color:'#ff6b5f',label:t('parabola')},{color:'#4f7cff',label:t('straightLine')}]});
-  resultBox('#parabolaLineResult',intersectionText(points),`${t('discriminant')} Δ = (b − m)² − 4a(c − k) = ${fmt(D)}<br>${fmt(a)}x²${signedMonomial(B,'x')}${signedMonomial(C)} = 0`, false, false, points.map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
+  const bounds=graphBounds([...parabola.map(p=>p.x),...points.map(p=>p.x)],[...parabola.map(p=>p.y),...points.map(p=>p.y)]);
+  renderCoordinateGraph('#parabolaLineGraph',{toggle:'#parabolaLineGraphToggle',bounds,curves:[{points:parabola,color:'#ff6b5f'}],segments:[{points:lineAcrossBounds(lineA,lineB,lineC,bounds),color:'#4f7cff'}],points:points.map((point,index)=>({...point,label:`P${points.length>1?index+1:''}`})),legend:[{color:'#ff6b5f',label:t('parabola')},{color:'#4f7cff',label:t('straightLine')}]});
+  resultBox('#parabolaLineResult',intersectionText(points),working, false, false, points.map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
 }
 function solveCircleLine(event) {
   event?.preventDefault();
-  const h=n('#clh'), k=n('#clk'), r=n('#clr'), A=n('#cla'), B=n('#clb'), C=n('#clc');
-  if (![h,k,r,A,B,C].every(Number.isFinite)) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidNumber'),'',true); }
+  let h, k, r, circleWorking='';
+  if (circleInputMode === 'center') {
+    h=n('#clh'); k=n('#clk'); r=n('#clr');
+    if (![h,k,r].every(Number.isFinite)) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidNumber'),'',true); }
+  } else {
+    const D=n('#cld'), E=n('#cle'), F=n('#clf');
+    if (![D,E,F].every(Number.isFinite)) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidNumber'),'',true); }
+    h=-D/2; k=-E/2;
+    const radiusSquared=h*h+k*k-F;
+    if (!(radiusSquared > 1e-12*Math.max(1,h*h,k*k,Math.abs(F)))) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidCircleGeneral'),'',true); }
+    r=Math.sqrt(radiusSquared);
+    circleWorking=`x² + y²${signedMonomial(D,'x')}${signedMonomial(E,'y')}${signedMonomial(F)} = 0<br>${t('derivedCenter')} O = ${pointText({x:h,y:k})}`;
+  }
+  const A=n('#cla'), B=n('#clb'), C=n('#clc');
+  if (![A,B,C].every(Number.isFinite)) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidNumber'),'',true); }
   if (!(r>0)) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidRadius'),'',true); }
   const norm2=A*A+B*B;
   if (norm2 < 1e-20) { $('#circleLineGraph').innerHTML=''; return resultBox('#circleLineResult',t('invalidLine'),'',true); }
@@ -437,7 +495,7 @@ function solveCircleLine(event) {
   renderCoordinateGraph('#circleLineGraph',{toggle:'#circleLineGraphToggle',equalScale:true,bounds,segments:[{points:lineAcrossBounds(A,B,C,bounds),color:'#ff6b5f'}],circles:[{center:{x:h,y:k},radius:r,color:'#4f7cff'}],points:[{x:h,y:k,label:'O',color:'#4f7cff'},...points.map((point,index)=>({...point,label:`P${points.length>1?index+1:''}`,color:'#112a46'}))],legend:[{color:'#4f7cff',label:t('circle')},{color:'#ff6b5f',label:t('straightLine')}]});
   const label=points.length===1?t('tangentPoint'):points.length>1?t('intersections'):t('noRealIntersections');
   const answer=points.length?`${label}<br>${intersectionText(points)}`:label;
-  resultBox('#circleLineResult',answer,`${t('radius')} r = ${fmt(r)}<br>d(O, line) = ${fmt(distanceToLine)}`, false, false, points.map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
+  resultBox('#circleLineResult',answer,`${circleWorking ? `${circleWorking}<br>` : ''}${t('radius')} r = ${fmt(r)}<br>d(O, line) = ${fmt(distanceToLine)}`, false, false, points.map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
 }
 
 function combinations(n,r) { r=Math.min(r,n-r); let x=1n; for(let i=1n;i<=BigInt(r);i++) x=x*BigInt(n-r+Number(i))/i; return x; }
