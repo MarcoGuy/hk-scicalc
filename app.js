@@ -1,0 +1,268 @@
+const translations = {
+  zh: {
+    tagline: "你的随身数学工具", eyebrow: "为香港高中数学而设", heroTitle: "忘了带科学计算机？<br /><em>照样解得到。</em>", heroBody: "方程、三角形与组合数学，一站算清。答案连步骤，温习也方便。",
+    tabEquation: "方程", tabTriangle: "三角形", tabCombi: "组合", quadraticTitle: "一元二次方程", cubicTitle: "一元三次方程", simultaneousTitle: "二元一次联立方程", heronTitle: "希罗公式", cosineTitle: "余弦定理", triangleCentersTitle: "三点求四心", combiTitle: "排列与组合",
+    quadraticHint: "输入系数 a、b 和常数 c。", cubicHint: "输入系数 a、b、c 和常数 d，答案以小数显示。", simultaneousHint: "输入两条一次方程，求 x 和 y。", heronHint: "已知三边，求三角形面积。", cosineHint: "选择求边长或角度。", centersHint: "输入三点坐标，求重心、外心、内心和垂心。", combiHint: "输入非负整数，获得完整精确答案。",
+    exact: "根式", decimal: "小数", coefficientA: "系数 a", coefficientB: "系数 b", coefficientC: "系数 c", constantC: "常数 c", constantD: "常数 d", solve: "计算答案", decimalRoots: "小数根", exactInteger: "精确整数",
+    sideA: "边 a", sideB: "边 b", sideC: "边 c", angleC: "角 C（度）", findArea: "求面积", findSide: "求边 c", findAngle: "求角 C", calculate: "计算", calculateBoth: "计算 nCr 与 nPr", equation1: "方程 1", equation2: "方程 2", xCoefficient: "x 系数", yCoefficient: "y 系数", systemConstant: "常数", solveSystem: "解联立方程",
+    coordinateGeometry: "坐标几何", pointA: "点 A", pointB: "点 B", pointC: "点 C", findCenters: "计算四心与圆", centroid: "重心 G", circumcenter: "外心 O", incenter: "内心 I", orthocenter: "垂心 H", circumcircle: "外接圆", incircle: "内切圆", radius: "半径",
+    footerText: "计算结果仅供学习与核对，请记得写出步骤。", answer: "答案", copy: "复制", copied: "已复制", steps: "步骤", discriminant: "判别式", noLinear: "a 不能是 0；否则这不是二次方程。", noCubic: "a 不能是 0；否则这不是三次方程。", invalidNumber: "请填写所有数字。", noSolution: "此联立方程无解。", infiniteSolutions: "此联立方程有无限多个解。", invalidPoints: "三个点必须互不共线，才能构成三角形。", triangleError: "三边必须大于 0，并满足任意两边之和大于第三边。", cosineError: "请输入有效的正边长；角 C 必须在 0° 与 180° 之间。", combiError: "n 与 r 必须是非负整数，而且 r ≤ n。", area: "面积", semiperimeter: "半周长", permutation: "排列", combination: "组合", complex: "复数根"
+  },
+  en: {
+    tagline: "Maths in your pocket", eyebrow: "Made for Hong Kong secondary maths", heroTitle: "Forgot your scientific calculator?<br /><em>Keep solving.</em>", heroBody: "Equations, triangles and combinatorics in one place—with working steps that make revision easier.",
+    tabEquation: "Equations", tabTriangle: "Triangles", tabCombi: "nCr / nPr", quadraticTitle: "Quadratic equation", cubicTitle: "Cubic equation", simultaneousTitle: "Simultaneous linear equations", heronTitle: "Heron's formula", cosineTitle: "Cosine rule", triangleCentersTitle: "Four triangle centres", combiTitle: "Permutations & combinations",
+    quadraticHint: "Enter coefficients a, b and constant c.", cubicHint: "Enter coefficients a, b, c and constant d. Roots are shown as decimals.", simultaneousHint: "Enter two linear equations to find x and y.", heronHint: "Find a triangle's area from three sides.", cosineHint: "Choose whether to find a side or an angle.", centersHint: "Enter three coordinates to find the centroid, circumcenter, incenter and orthocenter.", combiHint: "Enter non-negative integers for a complete exact answer.",
+    exact: "Exact", decimal: "Decimal", coefficientA: "Coefficient a", coefficientB: "Coefficient b", coefficientC: "Coefficient c", constantC: "Constant c", constantD: "Constant d", solve: "Solve", decimalRoots: "Decimal roots", exactInteger: "Exact integer",
+    sideA: "Side a", sideB: "Side b", sideC: "Side c", angleC: "Angle C (degrees)", findArea: "Find area", findSide: "Find side c", findAngle: "Find angle C", calculate: "Calculate", calculateBoth: "Calculate nCr & nPr", equation1: "Equation 1", equation2: "Equation 2", xCoefficient: "x coefficient", yCoefficient: "y coefficient", systemConstant: "Constant", solveSystem: "Solve equations",
+    coordinateGeometry: "Coordinate geometry", pointA: "Point A", pointB: "Point B", pointC: "Point C", findCenters: "Find centres & circles", centroid: "Centroid G", circumcenter: "Circumcenter O", incenter: "Incenter I", orthocenter: "Orthocenter H", circumcircle: "Circumcircle", incircle: "Incircle", radius: "Radius",
+    footerText: "Use results to learn and check your work—remember to show your steps.", answer: "Answer", copy: "Copy", copied: "Copied", steps: "Working", discriminant: "Discriminant", noLinear: "a cannot be 0; otherwise this is not a quadratic equation.", noCubic: "a cannot be 0; otherwise this is not a cubic equation.", invalidNumber: "Please enter every number.", noSolution: "This system has no solution.", infiniteSolutions: "This system has infinitely many solutions.", invalidPoints: "The three points must be non-collinear to form a triangle.", triangleError: "All sides must be positive and any two sides must add to more than the third.", cosineError: "Enter valid positive side lengths; angle C must be between 0° and 180°.", combiError: "n and r must be non-negative integers, with r ≤ n.", area: "Area", semiperimeter: "Semi-perimeter", permutation: "Permutation", combination: "Combination", complex: "Complex roots"
+  }
+};
+
+let lang = "zh";
+let answerFormat = "exact";
+let cosineMode = "side";
+const t = (key) => translations[lang][key] || key;
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+function setLanguage(next) {
+  lang = next;
+  document.documentElement.lang = next === "zh" ? "zh-HK" : "en";
+  $$('[data-t]').forEach((el) => {
+    const value = t(el.dataset.t);
+    if (value.includes("<")) el.innerHTML = value; else el.textContent = value;
+  });
+  $$('[data-lang-option]').forEach((el) => el.classList.toggle("active", el.dataset.langOption === lang));
+  updateCosineLabel();
+  recalculateVisible();
+}
+
+$("#languageSwitch").addEventListener("click", () => setLanguage(lang === "zh" ? "en" : "zh"));
+
+function showTool(group) {
+  $$('[data-group]').forEach((el) => el.classList.toggle("hidden", el.dataset.group !== group));
+  $$('.tool-tab').forEach((el) => el.classList.toggle("active", el.dataset.tool === group));
+  const first = $(`[data-group="${group}"]`);
+  if (first) showPanel(first.dataset.panel);
+}
+
+function showPanel(name) {
+  $$('.calculator-panel').forEach((el) => el.classList.toggle("active", el.id === `panel-${name}`));
+  $$('.subnav-item').forEach((el) => el.classList.toggle("active", el.dataset.panel === name));
+}
+
+$$('.tool-tab').forEach((el) => el.addEventListener("click", () => showTool(el.dataset.tool)));
+$$('.subnav-item').forEach((el) => el.addEventListener("click", () => showPanel(el.dataset.panel)));
+
+$$('[data-format]').forEach((button) => button.addEventListener("click", () => {
+  answerFormat = button.dataset.format;
+  $$('[data-format]').forEach((el) => el.classList.toggle("active", el === button));
+  solveQuadratic();
+}));
+
+$$('[data-cos-mode]').forEach((button) => button.addEventListener("click", () => {
+  cosineMode = button.dataset.cosMode;
+  $$('[data-cos-mode]').forEach((el) => el.classList.toggle("active", el === button));
+  updateCosineLabel();
+  solveCosine();
+}));
+
+function updateCosineLabel() {
+  const span = $('#cosThirdLabel span');
+  span.textContent = cosineMode === "side" ? t("angleC") : t("sideC");
+  const input = $('#cox');
+  input.value = cosineMode === "side" ? (input.dataset.angleValue || 60) : (input.dataset.sideValue || 8);
+}
+
+function n(id) { return Number($(id).value); }
+function fmt(value, digits = 8) {
+  if (Math.abs(value) < 1e-12) value = 0;
+  return Number(value.toPrecision(digits)).toString();
+}
+function gcd(a, b) { a = Math.abs(Math.round(a)); b = Math.abs(Math.round(b)); while (b) [a, b] = [b, a % b]; return a || 1; }
+function gcd3(a, b, c) { return gcd(gcd(a, b), c); }
+function squareFree(value) {
+  let inside = Math.abs(Math.round(value)); let outside = 1;
+  for (let i = 2; i * i <= inside; i++) while (inside % (i * i) === 0) { inside /= i * i; outside *= i; }
+  return { outside, inside };
+}
+function integerCoefficients(values) {
+  const decimals = values.map((v) => {
+    const s = Math.abs(v).toString().toLowerCase();
+    if (s.includes('e')) return Math.min(8, Math.max(0, Number(s.split('e')[1]) * -1 + (s.split('e')[0].split('.')[1] || '').length));
+    return (s.split('.')[1] || '').length;
+  });
+  const scale = 10 ** Math.min(8, Math.max(...decimals));
+  const ints = values.map((v) => Math.round(v * scale));
+  const common = ints.reduce((g, v) => gcd(g, v), 0) || 1;
+  return ints.map((v) => v / common);
+}
+function exactQuadratic(a, b, c) {
+  let [A, B, C] = integerCoefficients([a, b, c]);
+  if (A < 0) { A *= -1; B *= -1; C *= -1; }
+  const D = B * B - 4 * A * C;
+  const denominator = 2 * A;
+  const { outside, inside } = squareFree(D);
+  const common = gcd3(-B, outside, denominator);
+  const base = -B / common, rad = outside / common, den = denominator / common;
+  const sign = D < 0 ? 'i' : '';
+  if (inside === 1) {
+    if (D >= 0) {
+      const x1n = -B + outside, x2n = -B - outside;
+      const g1 = gcd(x1n, denominator), g2 = gcd(x2n, denominator);
+      const r1 = denominator / g1 === 1 ? `${x1n / g1}` : `${x1n / g1}/${denominator / g1}`;
+      const r2 = denominator / g2 === 1 ? `${x2n / g2}` : `${x2n / g2}/${denominator / g2}`;
+      return { text: `x = ${r1}, ${r2}`, D };
+    }
+    const mid = base === 0 ? '' : `${base} `;
+    const part = rad === 1 ? 'i' : `${rad}i`;
+    return { text: den === 1 ? `x = ${mid}± ${part}` : `x = (${mid}± ${part})/${den}`, D };
+  }
+  const radical = `${rad === 1 ? '' : rad}${sign}√${inside}`;
+  const numerator = base === 0 ? `± ${radical}` : `${base} ± ${radical}`;
+  return { text: den === 1 ? `x = ${numerator}` : `x = (${numerator})/${den}`, D };
+}
+function decimalQuadratic(a, b, c) {
+  const D = b * b - 4 * a * c;
+  if (D >= 0) return { text: `x = ${fmt((-b + Math.sqrt(D))/(2*a))}, ${fmt((-b - Math.sqrt(D))/(2*a))}`, D };
+  const real = -b/(2*a), imag = Math.sqrt(-D)/Math.abs(2*a);
+  return { text: `x = ${fmt(real)} ± ${fmt(imag)}i`, D };
+}
+function resultBox(target, answer, steps, error = false, dual = false) {
+  const box = $(target);
+  box.className = `result-box visible${error ? ' error' : ''}`;
+  if (error) { box.innerHTML = `<p class="result-answer">${answer}</p>`; return; }
+  const answerHtml = dual ? answer : `<p class="result-answer">${answer}</p>`;
+  box.innerHTML = `<div class="result-top"><div><p class="result-label">${t('answer')}</p>${answerHtml}</div><button class="copy-button" type="button">${t('copy')}</button></div>${steps ? `<div class="steps">${steps}</div>` : ''}`;
+  box.querySelector('.copy-button').addEventListener('click', async (event) => {
+    const plain = box.querySelector('.result-answer')?.textContent || box.querySelector('.result-top > div')?.textContent || '';
+    try { await navigator.clipboard.writeText(plain.trim()); event.currentTarget.textContent = t('copied'); setTimeout(() => event.currentTarget.textContent = t('copy'), 1200); } catch (_) {}
+  });
+}
+
+function solveQuadratic(event) {
+  event?.preventDefault(); const a=n('#qa'), b=n('#qb'), c=n('#qc');
+  if (![a,b,c].every(Number.isFinite)) return resultBox('#quadraticResult', t('invalidNumber'), '', true);
+  if (a === 0) return resultBox('#quadraticResult', t('noLinear'), '', true);
+  const r = answerFormat === 'exact' ? exactQuadratic(a,b,c) : decimalQuadratic(a,b,c);
+  const steps = `${t('discriminant')} Δ = b² − 4ac = ${fmt(r.D)}<br>x = (−b ± √Δ) / 2a`;
+  resultBox('#quadraticResult', r.text, steps);
+}
+
+function cbrt(x) { return Math.sign(x) * Math.pow(Math.abs(x), 1/3); }
+function solveCubic(event) {
+  event?.preventDefault(); const a=n('#ca'), b=n('#cb'), c=n('#cc'), d=n('#cd');
+  if (![a,b,c,d].every(Number.isFinite)) return resultBox('#cubicResult', t('invalidNumber'), '', true);
+  if (a === 0) return resultBox('#cubicResult', t('noCubic'), '', true);
+  const A=b/a, B=c/a, C=d/a;
+  const p=B-A*A/3, q=2*A*A*A/27-A*B/3+C;
+  const disc=(q*q)/4+(p*p*p)/27;
+  const eps=1e-12*Math.max(1,Math.abs(q*q/4),Math.abs(p*p*p/27));
+  let roots=[];
+  if (disc > eps) {
+    const u=cbrt(-q/2+Math.sqrt(disc)), v=cbrt(-q/2-Math.sqrt(disc));
+    const real=u+v-A/3, re=-(u+v)/2-A/3, im=Math.sqrt(3)*(u-v)/2;
+    roots=[fmt(real), `${fmt(re)} + ${fmt(Math.abs(im))}i`, `${fmt(re)} − ${fmt(Math.abs(im))}i`];
+  } else if (Math.abs(disc) <= eps) {
+    const u=cbrt(-q/2); roots=[fmt(2*u-A/3), fmt(-u-A/3), fmt(-u-A/3)];
+  } else {
+    const radius=2*Math.sqrt(-p/3), theta=Math.acos((3*q/(2*p))*Math.sqrt(-3/p));
+    roots=[0,1,2].map(k => radius*Math.cos((theta+2*Math.PI*k)/3)-A/3).sort((x,y)=>x-y).map(x=>fmt(x));
+  }
+  resultBox('#cubicResult', `x = ${roots.join(', ')}`, `p = ${fmt(p)}, q = ${fmt(q)}<br>Δ = (q/2)² + (p/3)³ = ${fmt(disc)}`);
+}
+
+function solveSimultaneous(event) {
+  event?.preventDefault();
+  const a1=n('#sa1'), b1=n('#sb1'), c1=n('#sc1'), a2=n('#sa2'), b2=n('#sb2'), c2=n('#sc2');
+  if (![a1,b1,c1,a2,b2,c2].every(Number.isFinite)) return resultBox('#simultaneousResult', t('invalidNumber'), '', true);
+  const D=a1*b2-a2*b1, Dx=c1*b2-c2*b1, Dy=a1*c2-a2*c1;
+  const scale=Math.max(1,Math.abs(a1),Math.abs(b1),Math.abs(c1),Math.abs(a2),Math.abs(b2),Math.abs(c2));
+  const eps=1e-11*scale*scale;
+  if (Math.abs(D) <= eps) {
+    const message=Math.abs(Dx)<=eps && Math.abs(Dy)<=eps ? t('infiniteSolutions') : t('noSolution');
+    return resultBox('#simultaneousResult', message, `D = ${fmt(D)}, Dₓ = ${fmt(Dx)}, Dᵧ = ${fmt(Dy)}`, true);
+  }
+  const x=Dx/D, y=Dy/D;
+  resultBox('#simultaneousResult', `x = ${fmt(x)}, y = ${fmt(y)}`, `D = a₁b₂ − a₂b₁ = ${fmt(D)}<br>Dₓ = c₁b₂ − c₂b₁ = ${fmt(Dx)}<br>Dᵧ = a₁c₂ − a₂c₁ = ${fmt(Dy)}`);
+}
+
+function validTriangle(a,b,c) { return [a,b,c].every(v=>Number.isFinite(v)&&v>0) && a+b>c && a+c>b && b+c>a; }
+function solveHeron(event) {
+  event?.preventDefault(); const a=n('#ha'), b=n('#hb'), c=n('#hc');
+  if (!validTriangle(a,b,c)) return resultBox('#heronResult', t('triangleError'), '', true);
+  const s=(a+b+c)/2, area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+  resultBox('#heronResult', `${t('area')} = ${fmt(area)}`, `${t('semiperimeter')} s = (a + b + c) / 2 = ${fmt(s)}<br>A = √[${fmt(s)} × ${fmt(s-a)} × ${fmt(s-b)} × ${fmt(s-c)}]`);
+}
+
+function solveCosine(event) {
+  event?.preventDefault(); const a=n('#coa'), b=n('#cob'), x=n('#cox');
+  if (![a,b].every(v=>Number.isFinite(v)&&v>0)) return resultBox('#cosineResult', t('cosineError'), '', true);
+  if (cosineMode === 'side') {
+    $('#cox').dataset.angleValue = x;
+    if (!(x>0&&x<180)) return resultBox('#cosineResult', t('cosineError'), '', true);
+    const c=Math.sqrt(a*a+b*b-2*a*b*Math.cos(x*Math.PI/180));
+    resultBox('#cosineResult', `c = ${fmt(c)}`, `c² = ${fmt(a*a)} + ${fmt(b*b)} − 2(${fmt(a)})(${fmt(b)}) cos ${fmt(x)}°`);
+  } else {
+    $('#cox').dataset.sideValue = x;
+    if (!validTriangle(a,b,x)) return resultBox('#cosineResult', t('triangleError'), '', true);
+    const cosC=Math.max(-1,Math.min(1,(a*a+b*b-x*x)/(2*a*b))), C=Math.acos(cosC)*180/Math.PI;
+    resultBox('#cosineResult', `C = ${fmt(C)}°`, `cos C = (a² + b² − c²) / 2ab = ${fmt(cosC)}`);
+  }
+}
+
+function distance(p, q) { return Math.hypot(p.x-q.x, p.y-q.y); }
+function pointText(p) { return `(${fmt(p.x)}, ${fmt(p.y)})`; }
+function circleFactor(variable, center) {
+  if (Math.abs(center) < 1e-12) return variable;
+  return `(${variable} ${center < 0 ? '+' : '−'} ${fmt(Math.abs(center))})`;
+}
+function circleEquation(center, radius) { return `${circleFactor('x',center.x)}² + ${circleFactor('y',center.y)}² = ${fmt(radius*radius)}`; }
+function solveCenters(event) {
+  event?.preventDefault();
+  const A={x:n('#ax'),y:n('#ay')}, B={x:n('#bx'),y:n('#by')}, C={x:n('#cx'),y:n('#cy')};
+  if (![A.x,A.y,B.x,B.y,C.x,C.y].every(Number.isFinite)) return resultBox('#centersResult', t('invalidNumber'), '', true);
+  const cross=(B.x-A.x)*(C.y-A.y)-(B.y-A.y)*(C.x-A.x);
+  const coordScale=Math.max(1,Math.abs(A.x),Math.abs(A.y),Math.abs(B.x),Math.abs(B.y),Math.abs(C.x),Math.abs(C.y));
+  if (Math.abs(cross) < 1e-11*coordScale*coordScale) return resultBox('#centersResult', t('invalidPoints'), '', true);
+  const a=distance(B,C), b=distance(C,A), c=distance(A,B), perimeter=a+b+c;
+  const G={x:(A.x+B.x+C.x)/3,y:(A.y+B.y+C.y)/3};
+  const denominator=2*(A.x*(B.y-C.y)+B.x*(C.y-A.y)+C.x*(A.y-B.y));
+  const a2=A.x*A.x+A.y*A.y, b2=B.x*B.x+B.y*B.y, c2=C.x*C.x+C.y*C.y;
+  const O={
+    x:(a2*(B.y-C.y)+b2*(C.y-A.y)+c2*(A.y-B.y))/denominator,
+    y:(a2*(C.x-B.x)+b2*(A.x-C.x)+c2*(B.x-A.x))/denominator
+  };
+  const I={x:(a*A.x+b*B.x+c*C.x)/perimeter,y:(a*A.y+b*B.y+c*C.y)/perimeter};
+  const H={x:A.x+B.x+C.x-2*O.x,y:A.y+B.y+C.y-2*O.y};
+  const R=distance(O,A), area=Math.abs(cross)/2, r=2*area/perimeter;
+  const centers=`<div class="centers-results"><div class="center-item"><span>${t('centroid')}</span><b>${pointText(G)}</b></div><div class="center-item"><span>${t('circumcenter')}</span><b>${pointText(O)}</b></div><div class="center-item"><span>${t('incenter')}</span><b>${pointText(I)}</b></div><div class="center-item"><span>${t('orthocenter')}</span><b>${pointText(H)}</b></div></div>`;
+  const circles=`<div class="circle-equations"><strong>${t('circumcircle')}</strong> · ${t('radius')} R = ${fmt(R)}<br>${circleEquation(O,R)}<br><strong>${t('incircle')}</strong> · ${t('radius')} r = ${fmt(r)}<br>${circleEquation(I,r)}</div>`;
+  resultBox('#centersResult', centers, circles, false, true);
+}
+
+function combinations(n,r) { r=Math.min(r,n-r); let x=1n; for(let i=1n;i<=BigInt(r);i++) x=x*BigInt(n-r+Number(i))/i; return x; }
+function permutations(n,r) { let x=1n; for(let i=0;i<r;i++) x*=BigInt(n-i); return x; }
+function solveCombi(event) {
+  event?.preventDefault(); const nValue=n('#cn'), rValue=n('#cr');
+  if (![nValue,rValue].every(Number.isSafeInteger)||nValue<0||rValue<0||rValue>nValue) return resultBox('#combiResult', t('combiError'), '', true);
+  const c=combinations(nValue,rValue), p=permutations(nValue,rValue);
+  const dual=`<div class="dual-results"><div><span>${t('combination')} · nCr</span><b>${c.toLocaleString('en-US')}</b></div><div><span>${t('permutation')} · nPr</span><b>${p.toLocaleString('en-US')}</b></div></div>`;
+  resultBox('#combiResult', dual, `nCr = n! / [r!(n−r)!]<br>nPr = n! / (n−r)!`, false, true);
+}
+
+$('#quadraticForm').addEventListener('submit', solveQuadratic);
+$('#cubicForm').addEventListener('submit', solveCubic);
+$('#simultaneousForm').addEventListener('submit', solveSimultaneous);
+$('#heronForm').addEventListener('submit', solveHeron);
+$('#cosineForm').addEventListener('submit', solveCosine);
+$('#centersForm').addEventListener('submit', solveCenters);
+$('#combiForm').addEventListener('submit', solveCombi);
+function recalculateVisible() {
+  const active=$('.calculator-panel.active');
+  if (!active) return;
+  ({'panel-quadratic':solveQuadratic,'panel-cubic':solveCubic,'panel-simultaneous':solveSimultaneous,'panel-heron':solveHeron,'panel-cosine':solveCosine,'panel-centers':solveCenters,'panel-combinatorics':solveCombi}[active.id] || (()=>{}))();
+}
+solveQuadratic();
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));

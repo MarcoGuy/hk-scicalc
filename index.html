@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#112a46" />
+    <meta name="description" content="为香港高中生而设的中英双语科学计算工具：方程、三角形、nCr 与 nPr。" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=2" />
+    <title>HK SciCalc · 科学计算器</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="HK SciCalc home">
+          <span class="brand-mark" aria-hidden="true">Σ</span>
+          <span><strong>HK SciCalc</strong><small data-t="tagline">你的随身数学工具</small></span>
+        </a>
+        <button class="language-switch" id="languageSwitch" type="button" aria-label="Switch language">
+          <span class="active" data-lang-option="zh">中文</span><span>／</span><span data-lang-option="en">EN</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow" data-t="eyebrow">为香港高中数学而设</p>
+            <h1 data-t="heroTitle">忘了带科学计算机？<br /><em>照样解得到。</em></h1>
+            <p data-t="heroBody">方程、三角形与组合数学，一站算清。答案连步骤，温习也方便。</p>
+          </div>
+          <div class="formula-cloud" aria-hidden="true">
+            <span class="formula formula-a">x = <i>−b ± √Δ</i><b>2a</b></span>
+            <span class="formula formula-b">A = √s(s−a)(s−b)(s−c)</span>
+            <span class="formula formula-c">ⁿCᵣ</span>
+          </div>
+        </section>
+
+        <nav class="tool-tabs" aria-label="Calculator tools">
+          <button class="tool-tab active" data-tool="quadratic" type="button"><span class="tab-icon">x²</span><span data-t="tabEquation">方程</span></button>
+          <button class="tool-tab" data-tool="triangle" type="button"><span class="tab-icon">△</span><span data-t="tabTriangle">三角形</span></button>
+          <button class="tool-tab" data-tool="combinatorics" type="button"><span class="tab-icon">n!</span><span data-t="tabCombi">组合</span></button>
+        </nav>
+
+        <section class="workspace">
+          <aside class="subnav" id="subnav">
+            <button class="subnav-item active" data-panel="quadratic" data-group="quadratic" type="button"><span>01</span><b data-t="quadraticTitle">一元二次方程</b><small>Quadratic</small></button>
+            <button class="subnav-item" data-panel="cubic" data-group="quadratic" type="button"><span>02</span><b data-t="cubicTitle">一元三次方程</b><small>Cubic</small></button>
+            <button class="subnav-item" data-panel="simultaneous" data-group="quadratic" type="button"><span>03</span><b data-t="simultaneousTitle">二元一次联立方程</b><small>Simultaneous</small></button>
+            <button class="subnav-item hidden" data-panel="heron" data-group="triangle" type="button"><span>01</span><b data-t="heronTitle">希罗公式</b><small>Heron's formula</small></button>
+            <button class="subnav-item hidden" data-panel="cosine" data-group="triangle" type="button"><span>02</span><b data-t="cosineTitle">余弦定理</b><small>Cosine rule</small></button>
+            <button class="subnav-item hidden" data-panel="centers" data-group="triangle" type="button"><span>03</span><b data-t="triangleCentersTitle">三点求四心</b><small>Triangle centres</small></button>
+            <button class="subnav-item hidden" data-panel="combinatorics" data-group="combinatorics" type="button"><span>01</span><b data-t="combiTitle">排列与组合</b><small>nPr &amp; nCr</small></button>
+          </aside>
+
+          <div class="calculator-card">
+            <section class="calculator-panel active" id="panel-quadratic">
+              <div class="panel-heading">
+                <div><p class="kicker">ax² + bx + c = 0</p><h2 data-t="quadraticTitle">一元二次方程</h2><p data-t="quadraticHint">输入系数 a、b 和常数 c。</p></div>
+                <div class="segmented" role="group" aria-label="Answer format">
+                  <button class="active" type="button" data-format="exact" data-t="exact">根式</button><button type="button" data-format="decimal" data-t="decimal">小数</button>
+                </div>
+              </div>
+              <form id="quadraticForm" class="calc-form">
+                <div class="equation-inputs three-inputs">
+                  <label><span data-t="coefficientA">系数 a</span><input id="qa" type="number" inputmode="decimal" step="any" value="1" required /></label>
+                  <span class="operator">x² +</span>
+                  <label><span data-t="coefficientB">系数 b</span><input id="qb" type="number" inputmode="decimal" step="any" value="-5" required /></label>
+                  <span class="operator">x +</span>
+                  <label><span data-t="constantC">常数 c</span><input id="qc" type="number" inputmode="decimal" step="any" value="6" required /></label>
+                  <span class="operator">= 0</span>
+                </div>
+                <button class="calculate-button" type="submit"><span data-t="solve">计算答案</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="quadraticResult" aria-live="polite"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-cubic">
+              <div class="panel-heading"><div><p class="kicker">ax³ + bx² + cx + d = 0</p><h2 data-t="cubicTitle">一元三次方程</h2><p data-t="cubicHint">输入系数 a、b、c 和常数 d，答案以小数显示。</p></div><span class="badge" data-t="decimalRoots">小数根</span></div>
+              <form id="cubicForm" class="calc-form">
+                <div class="equation-inputs four-inputs">
+                  <label><span data-t="coefficientA">系数 a</span><input id="ca" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x³ +</span>
+                  <label><span data-t="coefficientB">系数 b</span><input id="cb" type="number" inputmode="decimal" step="any" value="-6" required /></label><span class="operator">x² +</span>
+                  <label><span data-t="coefficientC">系数 c</span><input id="cc" type="number" inputmode="decimal" step="any" value="11" required /></label><span class="operator">x +</span>
+                  <label><span data-t="constantD">常数 d</span><input id="cd" type="number" inputmode="decimal" step="any" value="-6" required /></label><span class="operator">= 0</span>
+                </div>
+                <button class="calculate-button" type="submit"><span data-t="solve">计算答案</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="cubicResult" aria-live="polite"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-simultaneous">
+              <div class="panel-heading"><div><p class="kicker">a₁x + b₁y = c₁</p><h2 data-t="simultaneousTitle">二元一次联立方程</h2><p data-t="simultaneousHint">输入两条一次方程，求 x 和 y。</p></div><span class="badge">2 × 2</span></div>
+              <form id="simultaneousForm" class="calc-form">
+                <div class="linear-system">
+                  <div class="linear-row">
+                    <strong data-t="equation1">方程 1</strong>
+                    <label><span data-t="xCoefficient">x 系数</span><input id="sa1" type="number" inputmode="decimal" step="any" value="2" required /></label><span class="operator">x +</span>
+                    <label><span data-t="yCoefficient">y 系数</span><input id="sb1" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">y =</span>
+                    <label><span data-t="systemConstant">常数</span><input id="sc1" type="number" inputmode="decimal" step="any" value="7" required /></label>
+                  </div>
+                  <div class="linear-row">
+                    <strong data-t="equation2">方程 2</strong>
+                    <label><span data-t="xCoefficient">x 系数</span><input id="sa2" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x +</span>
+                    <label><span data-t="yCoefficient">y 系数</span><input id="sb2" type="number" inputmode="decimal" step="any" value="-1" required /></label><span class="operator">y =</span>
+                    <label><span data-t="systemConstant">常数</span><input id="sc2" type="number" inputmode="decimal" step="any" value="2" required /></label>
+                  </div>
+                </div>
+                <button class="calculate-button" type="submit"><span data-t="solveSystem">解联立方程</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="simultaneousResult" aria-live="polite"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-heron">
+              <div class="panel-heading"><div><p class="kicker">A = √s(s−a)(s−b)(s−c)</p><h2 data-t="heronTitle">希罗公式</h2><p data-t="heronHint">已知三边，求三角形面积。</p></div><span class="badge">Heron</span></div>
+              <form id="heronForm" class="calc-form">
+                <div class="field-grid three"><label><span data-t="sideA">边 a</span><input id="ha" type="number" inputmode="decimal" min="0" step="any" value="3" required /></label><label><span data-t="sideB">边 b</span><input id="hb" type="number" inputmode="decimal" min="0" step="any" value="4" required /></label><label><span data-t="sideC">边 c</span><input id="hc" type="number" inputmode="decimal" min="0" step="any" value="5" required /></label></div>
+                <button class="calculate-button" type="submit"><span data-t="findArea">求面积</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="heronResult" aria-live="polite"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-cosine">
+              <div class="panel-heading"><div><p class="kicker">c² = a² + b² − 2ab cos C</p><h2 data-t="cosineTitle">余弦定理</h2><p data-t="cosineHint">选择求边长或角度。</p></div></div>
+              <div class="segmented wide" role="group" aria-label="Cosine rule mode"><button class="active" type="button" data-cos-mode="side" data-t="findSide">求边 c</button><button type="button" data-cos-mode="angle" data-t="findAngle">求角 C</button></div>
+              <form id="cosineForm" class="calc-form">
+                <div class="field-grid three">
+                  <label><span data-t="sideA">边 a</span><input id="coa" type="number" inputmode="decimal" min="0" step="any" value="5" required /></label>
+                  <label><span data-t="sideB">边 b</span><input id="cob" type="number" inputmode="decimal" min="0" step="any" value="7" required /></label>
+                  <label id="cosThirdLabel"><span data-t="angleC">角 C（度）</span><input id="cox" type="number" inputmode="decimal" min="0" step="any" value="60" required /></label>
+                </div>
+                <button class="calculate-button" type="submit"><span data-t="calculate">计算</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="cosineResult" aria-live="polite"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-centers">
+              <div class="panel-heading"><div><p class="kicker">A(x₁,y₁) · B(x₂,y₂) · C(x₃,y₃)</p><h2 data-t="triangleCentersTitle">三点求四心</h2><p data-t="centersHint">输入三点坐标，求重心、外心、内心和垂心。</p></div><span class="badge" data-t="coordinateGeometry">坐标几何</span></div>
+              <form id="centersForm" class="calc-form">
+                <div class="points-grid">
+                  <fieldset class="point-card"><legend data-t="pointA">点 A</legend><label><span>x₁</span><input id="ax" type="number" inputmode="decimal" step="any" value="0" required /></label><label><span>y₁</span><input id="ay" type="number" inputmode="decimal" step="any" value="0" required /></label></fieldset>
+                  <fieldset class="point-card"><legend data-t="pointB">点 B</legend><label><span>x₂</span><input id="bx" type="number" inputmode="decimal" step="any" value="6" required /></label><label><span>y₂</span><input id="by" type="number" inputmode="decimal" step="any" value="0" required /></label></fieldset>
+                  <fieldset class="point-card"><legend data-t="pointC">点 C</legend><label><span>x₃</span><input id="cx" type="number" inputmode="decimal" step="any" value="2" required /></label><label><span>y₃</span><input id="cy" type="number" inputmode="decimal" step="any" value="4" required /></label></fieldset>
+                </div>
+                <button class="calculate-button" type="submit"><span data-t="findCenters">计算四心与圆</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="centersResult" aria-live="polite"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-combinatorics">
+              <div class="panel-heading"><div><p class="kicker">nCr &amp; nPr</p><h2 data-t="combiTitle">排列与组合</h2><p data-t="combiHint">输入非负整数，获得完整精确答案。</p></div><span class="badge" data-t="exactInteger">精确整数</span></div>
+              <form id="combiForm" class="calc-form">
+                <div class="field-grid two"><label><span>n</span><input id="cn" type="number" inputmode="numeric" min="0" step="1" value="10" required /></label><label><span>r</span><input id="cr" type="number" inputmode="numeric" min="0" step="1" value="3" required /></label></div>
+                <button class="calculate-button" type="submit"><span data-t="calculateBoth">计算 nCr 与 nPr</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="combiResult" aria-live="polite"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer><span>HK SciCalc</span><p data-t="footerText">计算结果仅供学习与核对，请记得写出步骤。</p><span>Made for students · 2026</span></footer>
+    </div>
+    <script src="app.js?v=4"></script>
+  </body>
+</html>

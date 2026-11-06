@@ -1,0 +1,10 @@
+{
+  "name": "HK SciCalc 科学计算器",
+  "short_name": "SciCalc",
+  "description": "给香港高中生的中英双语数学计算工具",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f3ed",
+  "theme_color": "#112a46",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
