@@ -7,7 +7,7 @@ const translations = {
     sideA: "边 a", sideB: "边 b", sideC: "边 c", angleC: "角 C（度）", findArea: "求面积", findSide: "求边 c", findAngle: "求角 C", calculate: "计算", calculateBoth: "计算 nCr 与 nPr", equation1: "方程 1", equation2: "方程 2", xCoefficient: "x 系数", yCoefficient: "y 系数", systemConstant: "常数", solveSystem: "解联立方程",
     coordinateGeometry: "坐标几何", pointA: "点 A", pointB: "点 B", pointC: "点 C", findCenters: "计算四心与圆", centroid: "重心 G", circumcenter: "外心 O", incenter: "内心 I", orthocenter: "垂心 H", circumcircle: "外接圆", incircle: "内切圆", radius: "半径", showGraph: "显示坐标图", vertex: "顶点", axisOfSymmetry: "对称轴", triangleDiagramCaption: "边 a、b、c 分别位于角 A、B、C 的对面",
     parabolaLineHint: "输入抛物线和直线，求实数交点并显示坐标图。", circleLineHint: "输入圆心、半径和一般式直线，求交点并显示坐标图。", parabola: "抛物线", straightLine: "直线", circle: "圆", slopeM: "斜率 m", interceptK: "截距 k", centerH: "圆心 h", centerK: "圆心 k", radiusR: "半径 r", lineA: "系数 A", lineB: "系数 B", lineC: "常数 C", findIntersections: "求交点", intersection: "交点", intersections: "交点", tangentPoint: "切点", noRealIntersections: "没有实数交点。", invalidLine: "直线的 A 和 B 不能同时为 0。", invalidRadius: "半径必须大于 0。",
-    footerText: "计算结果仅供学习与核对，请记得写出步骤。", answer: "答案", copy: "复制", copied: "已复制", steps: "步骤", discriminant: "判别式", noLinear: "a 不能是 0；否则这不是二次方程。", noCubic: "a 不能是 0；否则这不是三次方程。", invalidNumber: "请填写所有数字。", noSolution: "此联立方程无解。", infiniteSolutions: "此联立方程有无限多个解。", invalidPoints: "三个点必须互不共线，才能构成三角形。", triangleError: "三边必须大于 0，并满足任意两边之和大于第三边。", cosineError: "请输入有效的正边长；角 C 必须在 0° 与 180° 之间。", combiError: "n 与 r 必须是非负整数，而且 r ≤ n。", area: "面积", semiperimeter: "半周长", permutation: "排列", combination: "组合", complex: "复数根"
+    footerText: "计算结果仅供学习与核对，请记得写出步骤。", answer: "答案", copy: "复制", copyNumber: "复制纯数值", copied: "已复制", steps: "步骤", discriminant: "判别式", noLinear: "a 不能是 0；否则这不是二次方程。", noCubic: "a 不能是 0；否则这不是三次方程。", invalidNumber: "请填写所有数字。", noSolution: "此联立方程无解。", infiniteSolutions: "此联立方程有无限多个解。", invalidPoints: "三个点必须互不共线，才能构成三角形。", triangleError: "三边必须大于 0，并满足任意两边之和大于第三边。", cosineError: "请输入有效的正边长；角 C 必须在 0° 与 180° 之间。", combiError: "n 与 r 必须是非负整数，而且 r ≤ n。", area: "面积", semiperimeter: "半周长", permutation: "排列", combination: "组合", complex: "复数根"
   },
   en: {
     tagline: "Maths in your pocket", eyebrow: "Made for Hong Kong secondary maths", heroTitle: "Forgot your scientific calculator?<br /><em>Keep solving.</em>", heroBody: "Equations, coordinate graphs, triangles and combinatorics in one place—with working steps that make revision easier.",
@@ -17,7 +17,7 @@ const translations = {
     sideA: "Side a", sideB: "Side b", sideC: "Side c", angleC: "Angle C (degrees)", findArea: "Find area", findSide: "Find side c", findAngle: "Find angle C", calculate: "Calculate", calculateBoth: "Calculate nCr & nPr", equation1: "Equation 1", equation2: "Equation 2", xCoefficient: "x coefficient", yCoefficient: "y coefficient", systemConstant: "Constant", solveSystem: "Solve equations",
     coordinateGeometry: "Coordinate geometry", pointA: "Point A", pointB: "Point B", pointC: "Point C", findCenters: "Find centres & circles", centroid: "Centroid G", circumcenter: "Circumcenter O", incenter: "Incenter I", orthocenter: "Orthocenter H", circumcircle: "Circumcircle", incircle: "Incircle", radius: "Radius", showGraph: "Show coordinate graph", vertex: "Vertex", axisOfSymmetry: "Axis of symmetry", triangleDiagramCaption: "Sides a, b and c lie opposite angles A, B and C respectively",
     parabolaLineHint: "Enter a parabola and a line to find real intersections and plot them.", circleLineHint: "Enter a centre, radius and general-form line to find and plot intersections.", parabola: "Parabola", straightLine: "Line", circle: "Circle", slopeM: "Slope m", interceptK: "Intercept k", centerH: "Centre h", centerK: "Centre k", radiusR: "Radius r", lineA: "Coefficient A", lineB: "Coefficient B", lineC: "Constant C", findIntersections: "Find intersections", intersection: "Intersection", intersections: "Intersections", tangentPoint: "Tangent point", noRealIntersections: "There are no real intersections.", invalidLine: "Line coefficients A and B cannot both be 0.", invalidRadius: "The radius must be greater than 0.",
-    footerText: "Use results to learn and check your work—remember to show your steps.", answer: "Answer", copy: "Copy", copied: "Copied", steps: "Working", discriminant: "Discriminant", noLinear: "a cannot be 0; otherwise this is not a quadratic equation.", noCubic: "a cannot be 0; otherwise this is not a cubic equation.", invalidNumber: "Please enter every number.", noSolution: "This system has no solution.", infiniteSolutions: "This system has infinitely many solutions.", invalidPoints: "The three points must be non-collinear to form a triangle.", triangleError: "All sides must be positive and any two sides must add to more than the third.", cosineError: "Enter valid positive side lengths; angle C must be between 0° and 180°.", combiError: "n and r must be non-negative integers, with r ≤ n.", area: "Area", semiperimeter: "Semi-perimeter", permutation: "Permutation", combination: "Combination", complex: "Complex roots"
+    footerText: "Use results to learn and check your work—remember to show your steps.", answer: "Answer", copy: "Copy", copyNumber: "Copy numeric value", copied: "Copied", steps: "Working", discriminant: "Discriminant", noLinear: "a cannot be 0; otherwise this is not a quadratic equation.", noCubic: "a cannot be 0; otherwise this is not a cubic equation.", invalidNumber: "Please enter every number.", noSolution: "This system has no solution.", infiniteSolutions: "This system has infinitely many solutions.", invalidPoints: "The three points must be non-collinear to form a triangle.", triangleError: "All sides must be positive and any two sides must add to more than the third.", cosineError: "Enter valid positive side lengths; angle C must be between 0° and 180°.", combiError: "n and r must be non-negative integers, with r ≤ n.", area: "Area", semiperimeter: "Semi-perimeter", permutation: "Permutation", combination: "Combination", complex: "Complex roots"
   }
 };
 
@@ -247,15 +247,31 @@ function decimalQuadratic(a, b, c) {
   const real = -b/(2*a), imag = Math.sqrt(-D)/Math.abs(2*a);
   return { text: `x = ${fmt(real)} ± ${fmt(imag)}i`, D };
 }
-function resultBox(target, answer, steps, error = false, dual = false) {
+async function copyText(value) {
+  if (navigator.clipboard?.writeText) {
+    try { await navigator.clipboard.writeText(value); return true; } catch (_) {}
+  }
+  const field=document.createElement('textarea');
+  field.value=value; field.setAttribute('readonly','');
+  field.style.position='fixed'; field.style.opacity='0'; field.style.pointerEvents='none';
+  document.body.append(field); field.select(); field.setSelectionRange(0,field.value.length);
+  const copied=document.execCommand('copy'); field.remove();
+  return copied;
+}
+function resultBox(target, answer, steps, error = false, dual = false, copyValue = null) {
   const box = $(target);
   box.className = `result-box visible${error ? ' error' : ''}`;
   if (error) { box.innerHTML = `<p class="result-answer">${answer}</p>`; return; }
   const answerHtml = dual ? answer : `<p class="result-answer">${answer}</p>`;
-  box.innerHTML = `<div class="result-top"><div><p class="result-label">${t('answer')}</p>${answerHtml}</div><button class="copy-button" type="button">${t('copy')}</button></div>${steps ? `<div class="steps">${steps}</div>` : ''}`;
-  box.querySelector('.copy-button').addEventListener('click', async (event) => {
-    const plain = box.querySelector('.result-answer')?.textContent || box.querySelector('.result-top > div')?.textContent || '';
-    try { await navigator.clipboard.writeText(plain.trim()); event.currentTarget.textContent = t('copied'); setTimeout(() => event.currentTarget.textContent = t('copy'), 1200); } catch (_) {}
+  const fallback = String(answer).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+  const numericCopy = copyValue === null ? fallback.trim() : String(copyValue).trim();
+  const copyButton = numericCopy ? `<button class="copy-button" type="button">${t('copy')}</button>` : '';
+  box.innerHTML = `<div class="result-top"><div><p class="result-label">${t('answer')}</p>${answerHtml}</div>${copyButton}</div>${steps ? `<div class="steps">${steps}</div>` : ''}`;
+  box.dataset.copyValue = numericCopy;
+  const copyControl=box.querySelector('.copy-button');
+  copyControl?.setAttribute('aria-label',`${t('copyNumber')}: ${numericCopy.replace(/\n/g,'; ')}`);
+  copyControl?.addEventListener('click', async (event) => {
+    if (await copyText(box.dataset.copyValue)) { event.currentTarget.textContent = t('copied'); setTimeout(() => event.currentTarget.textContent = t('copy'), 2000); }
   });
 }
 
@@ -266,11 +282,11 @@ function solveQuadratic(event) {
   const h=-b/(2*a), k=a*h*h+b*h+c, D=b*b-4*a*c;
   const vertexForm=vertexEquation(a,h,k);
   if (answerFormat === 'vertex') {
-    resultBox('#quadraticResult', vertexForm, `${t('vertex')} = (${fmt(h)}, ${fmt(k)})<br>${t('axisOfSymmetry')}: x = ${fmt(h)}`);
+    resultBox('#quadraticResult', vertexForm, `${t('vertex')} = (${fmt(h)}, ${fmt(k)})<br>${t('axisOfSymmetry')}: x = ${fmt(h)}`, false, false, vertexForm.replace(/^y\s*=\s*/,''));
   } else {
     const r = answerFormat === 'exact' ? exactQuadratic(a,b,c) : decimalQuadratic(a,b,c);
     const steps = `${t('discriminant')} Δ = b² − 4ac = ${fmt(r.D)}<br>x = (−b ± √Δ) / 2a<br>${vertexForm}`;
-    resultBox('#quadraticResult', r.text, steps);
+    resultBox('#quadraticResult', r.text, steps, false, false, r.text.replace(/^x\s*=\s*/,''));
   }
   const roots = D >= 0 ? [(-b-Math.sqrt(D))/(2*a),(-b+Math.sqrt(D))/(2*a)] : [];
   const xCandidates=[h-4,h+4,h,...roots];
@@ -300,7 +316,7 @@ function solveCubic(event) {
     const radius=2*Math.sqrt(-p/3), theta=Math.acos((3*q/(2*p))*Math.sqrt(-3/p));
     roots=[0,1,2].map(k => radius*Math.cos((theta+2*Math.PI*k)/3)-A/3).sort((x,y)=>x-y).map(x=>fmt(x));
   }
-  resultBox('#cubicResult', `x = ${roots.join(', ')}`, `p = ${fmt(p)}, q = ${fmt(q)}<br>Δ = (q/2)² + (p/3)³ = ${fmt(disc)}`);
+  resultBox('#cubicResult', `x = ${roots.join(', ')}`, `p = ${fmt(p)}, q = ${fmt(q)}<br>Δ = (q/2)² + (p/3)³ = ${fmt(disc)}`, false, false, roots.join(', '));
 }
 
 function solveSimultaneous(event) {
@@ -317,7 +333,7 @@ function solveSimultaneous(event) {
     const message=Math.abs(Dx)<=eps && Math.abs(Dy)<=eps ? t('infiniteSolutions') : t('noSolution');
     return resultBox('#simultaneousResult', message, `D = ${fmt(D)}, Dₓ = ${fmt(Dx)}, Dᵧ = ${fmt(Dy)}`, true);
   }
-  resultBox('#simultaneousResult', `x = ${fmt(x)}, y = ${fmt(y)}`, `D = a₁b₂ − a₂b₁ = ${fmt(D)}<br>Dₓ = c₁b₂ − c₂b₁ = ${fmt(Dx)}<br>Dᵧ = a₁c₂ − a₂c₁ = ${fmt(Dy)}`);
+  resultBox('#simultaneousResult', `x = ${fmt(x)}, y = ${fmt(y)}`, `D = a₁b₂ − a₂b₁ = ${fmt(D)}<br>Dₓ = c₁b₂ − c₂b₁ = ${fmt(Dx)}<br>Dᵧ = a₁c₂ − a₂c₁ = ${fmt(Dy)}`, false, false, `${fmt(x)}, ${fmt(y)}`);
 }
 
 function validTriangle(a,b,c) { return [a,b,c].every(v=>Number.isFinite(v)&&v>0) && a+b>c && a+c>b && b+c>a; }
@@ -325,7 +341,7 @@ function solveHeron(event) {
   event?.preventDefault(); const a=n('#ha'), b=n('#hb'), c=n('#hc');
   if (!validTriangle(a,b,c)) return resultBox('#heronResult', t('triangleError'), '', true);
   const s=(a+b+c)/2, area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
-  resultBox('#heronResult', `${t('area')} = ${fmt(area)}`, `${t('semiperimeter')} s = (a + b + c) / 2 = ${fmt(s)}<br>A = √[${fmt(s)} × ${fmt(s-a)} × ${fmt(s-b)} × ${fmt(s-c)}]`);
+  resultBox('#heronResult', `${t('area')} = ${fmt(area)}`, `${t('semiperimeter')} s = (a + b + c) / 2 = ${fmt(s)}<br>A = √[${fmt(s)} × ${fmt(s-a)} × ${fmt(s-b)} × ${fmt(s-c)}]`, false, false, fmt(area));
 }
 
 function solveCosine(event) {
@@ -335,12 +351,12 @@ function solveCosine(event) {
     $('#cox').dataset.angleValue = x;
     if (!(x>0&&x<180)) return resultBox('#cosineResult', t('cosineError'), '', true);
     const c=Math.sqrt(a*a+b*b-2*a*b*Math.cos(x*Math.PI/180));
-    resultBox('#cosineResult', `c = ${fmt(c)}`, `c² = ${fmt(a*a)} + ${fmt(b*b)} − 2(${fmt(a)})(${fmt(b)}) cos ${fmt(x)}°`);
+    resultBox('#cosineResult', `c = ${fmt(c)}`, `c² = ${fmt(a*a)} + ${fmt(b*b)} − 2(${fmt(a)})(${fmt(b)}) cos ${fmt(x)}°`, false, false, fmt(c));
   } else {
     $('#cox').dataset.sideValue = x;
     if (!validTriangle(a,b,x)) return resultBox('#cosineResult', t('triangleError'), '', true);
     const cosC=Math.max(-1,Math.min(1,(a*a+b*b-x*x)/(2*a*b))), C=Math.acos(cosC)*180/Math.PI;
-    resultBox('#cosineResult', `C = ${fmt(C)}°`, `cos C = (a² + b² − c²) / 2ab = ${fmt(cosC)}`);
+    resultBox('#cosineResult', `C = ${fmt(C)}°`, `cos C = (a² + b² − c²) / 2ab = ${fmt(cosC)}`, false, false, fmt(C));
   }
 }
 
@@ -371,7 +387,7 @@ function solveCenters(event) {
   const R=distance(O,A), area=Math.abs(cross)/2, r=2*area/perimeter;
   const centers=`<div class="centers-results"><div class="center-item"><span>${t('centroid')}</span><b>${pointText(G)}</b></div><div class="center-item"><span>${t('circumcenter')}</span><b>${pointText(O)}</b></div><div class="center-item"><span>${t('incenter')}</span><b>${pointText(I)}</b></div><div class="center-item"><span>${t('orthocenter')}</span><b>${pointText(H)}</b></div></div>`;
   const circles=`<div class="circle-equations"><strong>${t('circumcircle')}</strong> · ${t('radius')} R = ${fmt(R)}<br>${circleEquation(O,R)}<br><strong>${t('incircle')}</strong> · ${t('radius')} r = ${fmt(r)}<br>${circleEquation(I,r)}</div>`;
-  resultBox('#centersResult', centers, circles, false, true);
+  resultBox('#centersResult', centers, circles, false, true, [G,O,I,H].map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
   const xs=[A.x,B.x,C.x,G.x,O.x,I.x,H.x,O.x-R,O.x+R,I.x-r,I.x+r], ys=[A.y,B.y,C.y,G.y,O.y,I.y,H.y,O.y-R,O.y+R,I.y-r,I.y+r];
   renderCoordinateGraph('#centersGraph',{toggle:'#centersGraphToggle',equalScale:true,bounds:graphBounds(xs,ys),polygons:[{points:[A,B,C],color:'#112a46',fill:'rgba(200,244,61,.16)'}],circles:[{center:O,radius:R,color:'#4f7cff'},{center:I,radius:r,color:'#ff6b5f'}],points:[{...A,label:'A'},{...B,label:'B'},{...C,label:'C'},{...G,label:'G',color:'#6c7f00'},{...O,label:'O',color:'#4f7cff'},{...I,label:'I',color:'#ff6b5f'},{...H,label:'H',color:'#9b4dca'}],legend:[{color:'#4f7cff',label:t('circumcircle')},{color:'#ff6b5f',label:t('incircle')}]});
 }
@@ -399,7 +415,7 @@ function solveParabolaLine(event) {
   const line=[{x:xMin,y:m*xMin+k},{x:xMax,y:m*xMax+k}];
   const bounds=graphBounds([...parabola.map(p=>p.x),...line.map(p=>p.x)],[...parabola.map(p=>p.y),...line.map(p=>p.y)]);
   renderCoordinateGraph('#parabolaLineGraph',{toggle:'#parabolaLineGraphToggle',bounds,curves:[{points:parabola,color:'#ff6b5f'},{points:line,color:'#4f7cff'}],points:points.map((point,index)=>({...point,label:`P${points.length>1?index+1:''}`})),legend:[{color:'#ff6b5f',label:t('parabola')},{color:'#4f7cff',label:t('straightLine')}]});
-  resultBox('#parabolaLineResult',intersectionText(points),`${t('discriminant')} Δ = (b − m)² − 4a(c − k) = ${fmt(D)}<br>${fmt(a)}x²${signedMonomial(B,'x')}${signedMonomial(C)} = 0`);
+  resultBox('#parabolaLineResult',intersectionText(points),`${t('discriminant')} Δ = (b − m)² − 4a(c − k) = ${fmt(D)}<br>${fmt(a)}x²${signedMonomial(B,'x')}${signedMonomial(C)} = 0`, false, false, points.map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
 }
 function solveCircleLine(event) {
   event?.preventDefault();
@@ -421,7 +437,7 @@ function solveCircleLine(event) {
   renderCoordinateGraph('#circleLineGraph',{toggle:'#circleLineGraphToggle',equalScale:true,bounds,segments:[{points:lineAcrossBounds(A,B,C,bounds),color:'#ff6b5f'}],circles:[{center:{x:h,y:k},radius:r,color:'#4f7cff'}],points:[{x:h,y:k,label:'O',color:'#4f7cff'},...points.map((point,index)=>({...point,label:`P${points.length>1?index+1:''}`,color:'#112a46'}))],legend:[{color:'#4f7cff',label:t('circle')},{color:'#ff6b5f',label:t('straightLine')}]});
   const label=points.length===1?t('tangentPoint'):points.length>1?t('intersections'):t('noRealIntersections');
   const answer=points.length?`${label}<br>${intersectionText(points)}`:label;
-  resultBox('#circleLineResult',answer,`${t('radius')} r = ${fmt(r)}<br>d(O, line) = ${fmt(distanceToLine)}`);
+  resultBox('#circleLineResult',answer,`${t('radius')} r = ${fmt(r)}<br>d(O, line) = ${fmt(distanceToLine)}`, false, false, points.map(point=>`${fmt(point.x)}, ${fmt(point.y)}`).join('\n'));
 }
 
 function combinations(n,r) { r=Math.min(r,n-r); let x=1n; for(let i=1n;i<=BigInt(r);i++) x=x*BigInt(n-r+Number(i))/i; return x; }
@@ -431,7 +447,7 @@ function solveCombi(event) {
   if (![nValue,rValue].every(Number.isSafeInteger)||nValue<0||rValue<0||rValue>nValue) return resultBox('#combiResult', t('combiError'), '', true);
   const c=combinations(nValue,rValue), p=permutations(nValue,rValue);
   const dual=`<div class="dual-results"><div><span>${t('combination')} · nCr</span><b>${c.toLocaleString('en-US')}</b></div><div><span>${t('permutation')} · nPr</span><b>${p.toLocaleString('en-US')}</b></div></div>`;
-  resultBox('#combiResult', dual, `nCr = n! / [r!(n−r)!]<br>nPr = n! / (n−r)!`, false, true);
+  resultBox('#combiResult', dual, `nCr = n! / [r!(n−r)!]<br>nPr = n! / (n−r)!`, false, true, `${c.toString()}\n${p.toString()}`);
 }
 
 $('#quadraticForm').addEventListener('submit', solveQuadratic);
