@@ -20,7 +20,7 @@ body { margin: 0; min-width: 320px; background: var(--paper); }
 button, input { font: inherit; }
 button { color: inherit; }
 .app-shell { min-height: 100vh; overflow: hidden; }
-.topbar { height: 78px; display: flex; align-items: center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 0 28px; border-bottom: 1px solid rgba(17,42,70,.12); }
+.topbar { position:relative; z-index:5; height:78px; display:flex; align-items:center; justify-content:space-between; max-width:1180px; margin:0 auto; padding:0 28px; border-bottom:1px solid rgba(17,42,70,.12); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; background: var(--ink); color: var(--lime); font: 700 25px Georgia, serif; transform: rotate(-4deg); }
 .brand strong { display: block; font-size: 18px; letter-spacing: -.02em; }
@@ -28,7 +28,7 @@ button { color: inherit; }
 .language-switch { border: 1px solid rgba(17,42,70,.16); border-radius: 999px; background: rgba(255,255,255,.55); padding: 9px 13px; cursor: pointer; font-weight: 700; font-size: 12px; }
 .language-switch span:not(.active) { opacity: .4; }
 .hero { position: relative; max-width: 1180px; min-height: 315px; margin: 0 auto; padding: 68px 28px 40px; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; }
-.hero::before { content:""; position:absolute; width:280px; height:280px; border-radius:50%; background:var(--lime); filter:blur(1px); right:-105px; top:-100px; opacity:.34; }
+.hero::before { content:""; position:absolute; width:280px; height:280px; border-radius:50%; background:var(--lime); filter:blur(1px); right:-105px; top:-100px; opacity:.34; pointer-events:none; }
 .eyebrow { color: var(--coral); text-transform: uppercase; letter-spacing: .15em; font-size: 12px; font-weight: 800; margin: 0 0 14px; }
 .hero h1 { font-family: Georgia, "Times New Roman", "Noto Serif HK", serif; font-weight: 500; font-size: clamp(39px, 5.3vw, 70px); line-height: .98; letter-spacing: -.045em; margin: 0; }
 .hero h1 em { font-style: italic; color: var(--coral); }
