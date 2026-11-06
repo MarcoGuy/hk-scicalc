@@ -90,6 +90,34 @@ input:focus { border-color:var(--lime-dark); box-shadow:0 0 0 3px rgba(200,244,6
 .center-item span { display:block; color:var(--muted); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
 .center-item b { display:block; margin-top:5px; font:500 21px Georgia,serif; }
 .circle-equations { margin-top:12px; padding:14px; border-radius:11px; background:rgba(255,255,255,.72); font:14px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap:anywhere; }
+.cosine-study-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr); gap:28px; align-items:start; }
+.triangle-diagram { margin:24px 0 0; padding:18px 18px 13px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(145deg,#f9fcf3,#eef7ff); }
+.triangle-diagram svg { display:block; width:100%; height:auto; max-height:260px; }
+.triangle-fill { fill:rgba(200,244,61,.22); }
+.triangle-edge { fill:none; stroke:var(--ink); stroke-width:4; stroke-linejoin:round; }
+.angle-arc { fill:none; stroke:var(--coral); stroke-width:4; stroke-linecap:round; }
+.vertex-labels text { fill:var(--coral); font:700 20px Georgia,serif; text-anchor:middle; }
+.side-labels text { fill:var(--ink); font:italic 700 19px Georgia,serif; text-anchor:middle; paint-order:stroke; stroke:#f5faef; stroke-width:7px; stroke-linejoin:round; }
+.triangle-diagram figcaption { color:var(--muted); font-size:11px; text-align:center; line-height:1.5; }
+.equation-block { margin-top:15px; padding:17px; border:1px solid var(--line); border-radius:14px; background:#fafaf7; }
+.equation-block:first-child { margin-top:0; }
+.equation-block > strong { display:block; margin-bottom:13px; color:var(--coral); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+.graph-toggle { display:flex; align-items:center; gap:10px; width:max-content; margin-top:24px; cursor:pointer; }
+.graph-toggle input { width:18px; height:18px; margin:0; accent-color:var(--ink); }
+.graph-toggle span { display:inline; margin:0; color:var(--ink); font-size:12px; }
+.graph-shell { margin-top:13px; border:1px solid rgba(17,42,70,.13); border-radius:16px; background:#fbfcf8; overflow:hidden; }
+.graph-shell svg { display:block; width:100%; height:auto; }
+.graph-background { fill:#fbfcf8; stroke:rgba(17,42,70,.09); }
+.graph-grid { stroke:rgba(17,42,70,.1); stroke-width:1; }
+.graph-axis { stroke:rgba(17,42,70,.58); stroke-width:1.5; }
+.graph-tick { fill:var(--muted); font:10px ui-monospace,SFMono-Regular,Menlo,monospace; }
+.graph-axis-name { fill:var(--ink); font:italic 700 14px Georgia,serif; }
+.graph-curve { fill:none; stroke-width:3.5; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+.graph-polygon { stroke-width:3; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+.graph-circle { fill:none; stroke-width:3; vector-effect:non-scaling-stroke; }
+.graph-point { stroke:#fff; stroke-width:2.5; }
+.graph-point-label { fill:var(--ink); font:700 12px ui-sans-serif,sans-serif; paint-order:stroke; stroke:#fbfcf8; stroke-width:5px; stroke-linejoin:round; }
+.graph-legend text { fill:var(--muted); font:700 11px ui-sans-serif,sans-serif; }
 .calculate-button { margin-top:22px; min-width:190px; border:0; border-radius:12px; background:var(--coral); color:white; padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:20px; font-weight:800; cursor:pointer; box-shadow:0 7px 0 #d74b43; transition:.12s; }
 .calculate-button:hover { transform:translateY(-1px); box-shadow:0 8px 0 #d74b43; }
 .calculate-button:active { transform:translateY(4px); box-shadow:0 3px 0 #d74b43; }
@@ -140,6 +168,10 @@ footer p { margin:0; text-align:center; }
   .points-grid { grid-template-columns:1fr; }
   .point-card { grid-template-columns:1fr 1fr; }
   .centers-results { grid-template-columns:1fr; }
+  .cosine-study-grid { grid-template-columns:1fr; gap:4px; }
+  .triangle-diagram { order:-1; }
+  .equation-block { padding:13px; }
+  .graph-shell { margin-inline:-8px; border-radius:12px; }
   .calculate-button { width:100%; }
   .dual-results { grid-template-columns:1fr; }
   footer { flex-direction:column; text-align:center; }

@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#112a46" />
-    <meta name="description" content="为香港高中生而设的中英双语科学计算工具：方程、三角形、nCr 与 nPr。" />
+    <meta name="description" content="为香港高中生而设的中英双语数学工具：方程、坐标图、三角形、nCr 与 nPr。" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=4" />
     <title>HK SciCalc · 科学计算器</title>
   </head>
   <body>
@@ -27,7 +27,7 @@
           <div class="hero-copy">
             <p class="eyebrow" data-t="eyebrow">为香港高中数学而设</p>
             <h1 data-t="heroTitle">忘了带科学计算机？<br /><em>照样解得到。</em></h1>
-            <p data-t="heroBody">方程、三角形与组合数学，一站算清。答案连步骤，温习也方便。</p>
+            <p data-t="heroBody">方程、坐标图、三角形与组合数学，一站算清。答案连步骤，温习也方便。</p>
           </div>
           <div class="formula-cloud" aria-hidden="true">
             <span class="formula formula-a">x = <i>−b ± √Δ</i><b>2a</b></span>
@@ -39,6 +39,7 @@
         <nav class="tool-tabs" aria-label="Calculator tools">
           <button class="tool-tab active" data-tool="quadratic" type="button"><span class="tab-icon">x²</span><span data-t="tabEquation">方程</span></button>
           <button class="tool-tab" data-tool="triangle" type="button"><span class="tab-icon">△</span><span data-t="tabTriangle">三角形</span></button>
+          <button class="tool-tab" data-tool="geometry" type="button"><span class="tab-icon">x-y</span><span data-t="tabGraphs">图形</span></button>
           <button class="tool-tab" data-tool="combinatorics" type="button"><span class="tab-icon">n!</span><span data-t="tabCombi">组合</span></button>
         </nav>
 
@@ -50,6 +51,8 @@
             <button class="subnav-item hidden" data-panel="heron" data-group="triangle" type="button"><span>01</span><b data-t="heronTitle">希罗公式</b><small>Heron's formula</small></button>
             <button class="subnav-item hidden" data-panel="cosine" data-group="triangle" type="button"><span>02</span><b data-t="cosineTitle">余弦定理</b><small>Cosine rule</small></button>
             <button class="subnav-item hidden" data-panel="centers" data-group="triangle" type="button"><span>03</span><b data-t="triangleCentersTitle">三点求四心</b><small>Triangle centres</small></button>
+            <button class="subnav-item hidden" data-panel="parabola-line" data-group="geometry" type="button"><span>01</span><b data-t="parabolaLineTitle">抛物线与直线</b><small>Parabola × line</small></button>
+            <button class="subnav-item hidden" data-panel="circle-line" data-group="geometry" type="button"><span>02</span><b data-t="circleLineTitle">圆与直线</b><small>Circle × line</small></button>
             <button class="subnav-item hidden" data-panel="combinatorics" data-group="combinatorics" type="button"><span>01</span><b data-t="combiTitle">排列与组合</b><small>nPr &amp; nCr</small></button>
           </aside>
 
@@ -58,7 +61,7 @@
               <div class="panel-heading">
                 <div><p class="kicker">ax² + bx + c = 0</p><h2 data-t="quadraticTitle">一元二次方程</h2><p data-t="quadraticHint">输入系数 a、b 和常数 c。</p></div>
                 <div class="segmented" role="group" aria-label="Answer format">
-                  <button class="active" type="button" data-format="exact" data-t="exact">根式</button><button type="button" data-format="decimal" data-t="decimal">小数</button>
+                  <button class="active" type="button" data-format="exact" data-t="exact">根式</button><button type="button" data-format="decimal" data-t="decimal">小数</button><button type="button" data-format="vertex" data-t="vertexForm">顶点式</button>
                 </div>
               </div>
               <form id="quadraticForm" class="calc-form">
@@ -73,6 +76,8 @@
                 <button class="calculate-button" type="submit"><span data-t="solve">计算答案</span><b>→</b></button>
               </form>
               <div class="result-box" id="quadraticResult" aria-live="polite"></div>
+              <label class="graph-toggle"><input id="quadraticGraphToggle" type="checkbox" checked /><span data-t="showGraph">显示坐标图</span></label>
+              <div class="graph-shell" id="quadraticGraph" data-graph-title="Quadratic graph"></div>
             </section>
 
             <section class="calculator-panel" id="panel-cubic">
@@ -109,6 +114,8 @@
                 <button class="calculate-button" type="submit"><span data-t="solveSystem">解联立方程</span><b>→</b></button>
               </form>
               <div class="result-box" id="simultaneousResult" aria-live="polite"></div>
+              <label class="graph-toggle"><input id="simultaneousGraphToggle" type="checkbox" checked /><span data-t="showGraph">显示坐标图</span></label>
+              <div class="graph-shell" id="simultaneousGraph" data-graph-title="Simultaneous equations graph"></div>
             </section>
 
             <section class="calculator-panel" id="panel-heron">
@@ -122,15 +129,29 @@
 
             <section class="calculator-panel" id="panel-cosine">
               <div class="panel-heading"><div><p class="kicker">c² = a² + b² − 2ab cos C</p><h2 data-t="cosineTitle">余弦定理</h2><p data-t="cosineHint">选择求边长或角度。</p></div></div>
-              <div class="segmented wide" role="group" aria-label="Cosine rule mode"><button class="active" type="button" data-cos-mode="side" data-t="findSide">求边 c</button><button type="button" data-cos-mode="angle" data-t="findAngle">求角 C</button></div>
-              <form id="cosineForm" class="calc-form">
-                <div class="field-grid three">
-                  <label><span data-t="sideA">边 a</span><input id="coa" type="number" inputmode="decimal" min="0" step="any" value="5" required /></label>
-                  <label><span data-t="sideB">边 b</span><input id="cob" type="number" inputmode="decimal" min="0" step="any" value="7" required /></label>
-                  <label id="cosThirdLabel"><span data-t="angleC">角 C（度）</span><input id="cox" type="number" inputmode="decimal" min="0" step="any" value="60" required /></label>
+              <div class="cosine-study-grid">
+                <div>
+                  <div class="segmented wide" role="group" aria-label="Cosine rule mode"><button class="active" type="button" data-cos-mode="side" data-t="findSide">求边 c</button><button type="button" data-cos-mode="angle" data-t="findAngle">求角 C</button></div>
+                  <form id="cosineForm" class="calc-form">
+                    <div class="field-grid three">
+                      <label><span data-t="sideA">边 a</span><input id="coa" type="number" inputmode="decimal" min="0" step="any" value="5" required /></label>
+                      <label><span data-t="sideB">边 b</span><input id="cob" type="number" inputmode="decimal" min="0" step="any" value="7" required /></label>
+                      <label id="cosThirdLabel"><span data-t="angleC">角 C（度）</span><input id="cox" type="number" inputmode="decimal" min="0" step="any" value="60" required /></label>
+                    </div>
+                    <button class="calculate-button" type="submit"><span data-t="calculate">计算</span><b>→</b></button>
+                  </form>
                 </div>
-                <button class="calculate-button" type="submit"><span data-t="calculate">计算</span><b>→</b></button>
-              </form>
+                <figure class="triangle-diagram" aria-labelledby="triangleDiagramCaption">
+                  <svg viewBox="0 0 360 255" role="img" aria-label="Triangle ABC with opposite sides a, b and c">
+                    <path class="triangle-fill" d="M180 28 L42 218 L320 218 Z" />
+                    <path class="triangle-edge" d="M180 28 L42 218 L320 218 Z" />
+                    <path class="angle-arc" d="M288 218 A32 32 0 0 1 300 192" />
+                    <g class="vertex-labels"><text x="180" y="18">A</text><text x="25" y="238">B</text><text x="331" y="238">C</text></g>
+                    <g class="side-labels"><text x="181" y="239">a</text><text x="260" y="115">b</text><text x="91" y="115">c</text></g>
+                  </svg>
+                  <figcaption id="triangleDiagramCaption" data-t="triangleDiagramCaption">边 a、b、c 分别位于角 A、B、C 的对面</figcaption>
+                </figure>
+              </div>
               <div class="result-box" id="cosineResult" aria-live="polite"></div>
             </section>
 
@@ -145,6 +166,32 @@
                 <button class="calculate-button" type="submit"><span data-t="findCenters">计算四心与圆</span><b>→</b></button>
               </form>
               <div class="result-box" id="centersResult" aria-live="polite"></div>
+              <label class="graph-toggle"><input id="centersGraphToggle" type="checkbox" checked /><span data-t="showGraph">显示坐标图</span></label>
+              <div class="graph-shell" id="centersGraph" data-graph-title="Triangle centres graph"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-parabola-line">
+              <div class="panel-heading"><div><p class="kicker">y = ax² + bx + c · y = mx + k</p><h2 data-t="parabolaLineTitle">抛物线与直线交点</h2><p data-t="parabolaLineHint">输入抛物线和直线，求实数交点并显示坐标图。</p></div><span class="badge" data-t="coordinateGeometry">坐标几何</span></div>
+              <form id="parabolaLineForm" class="calc-form">
+                <div class="equation-block"><strong data-t="parabola">抛物线</strong><div class="equation-inputs three-inputs"><label><span data-t="coefficientA">系数 a</span><input id="pla" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x² +</span><label><span data-t="coefficientB">系数 b</span><input id="plb" type="number" inputmode="decimal" step="any" value="0" required /></label><span class="operator">x +</span><label><span data-t="constantC">常数 c</span><input id="plc" type="number" inputmode="decimal" step="any" value="-1" required /></label></div></div>
+                <div class="equation-block"><strong data-t="straightLine">直线</strong><div class="equation-inputs"><span class="operator">y =</span><label><span data-t="slopeM">斜率 m</span><input id="plm" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x +</span><label><span data-t="interceptK">截距 k</span><input id="plk" type="number" inputmode="decimal" step="any" value="1" required /></label></div></div>
+                <button class="calculate-button" type="submit"><span data-t="findIntersections">求交点</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="parabolaLineResult" aria-live="polite"></div>
+              <label class="graph-toggle"><input id="parabolaLineGraphToggle" type="checkbox" checked /><span data-t="showGraph">显示坐标图</span></label>
+              <div class="graph-shell" id="parabolaLineGraph" data-graph-title="Parabola and line graph"></div>
+            </section>
+
+            <section class="calculator-panel" id="panel-circle-line">
+              <div class="panel-heading"><div><p class="kicker">(x−h)² + (y−k)² = r² · Ax + By = C</p><h2 data-t="circleLineTitle">圆与直线交点</h2><p data-t="circleLineHint">输入圆心、半径和一般式直线，求交点并显示坐标图。</p></div><span class="badge" data-t="coordinateGeometry">坐标几何</span></div>
+              <form id="circleLineForm" class="calc-form">
+                <div class="equation-block"><strong data-t="circle">圆</strong><div class="field-grid three"><label><span data-t="centerH">圆心 h</span><input id="clh" type="number" inputmode="decimal" step="any" value="0" required /></label><label><span data-t="centerK">圆心 k</span><input id="clk" type="number" inputmode="decimal" step="any" value="0" required /></label><label><span data-t="radiusR">半径 r</span><input id="clr" type="number" inputmode="decimal" min="0" step="any" value="5" required /></label></div></div>
+                <div class="equation-block"><strong data-t="straightLine">直线</strong><div class="equation-inputs three-inputs"><label><span data-t="lineA">系数 A</span><input id="cla" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x +</span><label><span data-t="lineB">系数 B</span><input id="clb" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">y =</span><label><span data-t="lineC">常数 C</span><input id="clc" type="number" inputmode="decimal" step="any" value="5" required /></label></div></div>
+                <button class="calculate-button" type="submit"><span data-t="findIntersections">求交点</span><b>→</b></button>
+              </form>
+              <div class="result-box" id="circleLineResult" aria-live="polite"></div>
+              <label class="graph-toggle"><input id="circleLineGraphToggle" type="checkbox" checked /><span data-t="showGraph">显示坐标图</span></label>
+              <div class="graph-shell" id="circleLineGraph" data-graph-title="Circle and line graph"></div>
             </section>
 
             <section class="calculator-panel" id="panel-combinatorics">
@@ -161,6 +208,6 @@
 
       <footer><span>HK SciCalc</span><p data-t="footerText">计算结果仅供学习与核对，请记得写出步骤。</p><span>Made for students · 2026</span></footer>
     </div>
-    <script src="app.js?v=4"></script>
+    <script src="app.js?v=8"></script>
   </body>
 </html>
