@@ -7,7 +7,7 @@
     <meta name="description" content="为香港高中生而设的中英双语数学工具：方程、坐标图、三角形、nCr 与 nPr。" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=10" />
     <title>HK SciCalc · 科学计算器</title>
   </head>
   <body>
@@ -65,7 +65,7 @@
                 <div class="equation-inputs three-inputs">
                   <label><span data-t="coefficientA">系数 a</span><input id="qa" type="number" inputmode="decimal" step="any" value="1" required /></label>
                   <span class="operator">x² +</span>
-                  <label><span data-t="coefficientB">系数 b</span><input id="qb" type="number" inputmode="decimal" step="any" value="-5" required /></label>
+                  <label><span data-t="coefficientB">系数 b</span><input id="qb" type="number" inputmode="decimal" step="any" value="5" required /></label>
                   <span class="operator">x +</span>
                   <label><span data-t="constantC">常数 c</span><input id="qc" type="number" inputmode="decimal" step="any" value="6" required /></label>
                   <span class="operator">= 0</span>
@@ -82,9 +82,9 @@
               <form id="cubicForm" class="calc-form">
                 <div class="equation-inputs four-inputs">
                   <label><span data-t="coefficientA">系数 a</span><input id="ca" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x³ +</span>
-                  <label><span data-t="coefficientB">系数 b</span><input id="cb" type="number" inputmode="decimal" step="any" value="-6" required /></label><span class="operator">x² +</span>
+                  <label><span data-t="coefficientB">系数 b</span><input id="cb" type="number" inputmode="decimal" step="any" value="6" required /></label><span class="operator">x² +</span>
                   <label><span data-t="coefficientC">系数 c</span><input id="cc" type="number" inputmode="decimal" step="any" value="11" required /></label><span class="operator">x +</span>
-                  <label><span data-t="constantD">常数 d</span><input id="cd" type="number" inputmode="decimal" step="any" value="-6" required /></label><span class="operator">= 0</span>
+                  <label><span data-t="constantD">常数 d</span><input id="cd" type="number" inputmode="decimal" step="any" value="6" required /></label><span class="operator">= 0</span>
                 </div>
                 <button class="calculate-button" type="submit"><span data-t="solve">计算答案</span><b>→</b></button>
               </form>
@@ -104,7 +104,7 @@
                   <div class="linear-row">
                     <strong data-t="equation2">方程 2</strong>
                     <label><span data-t="xCoefficient">x 系数</span><input id="sa2" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x +</span>
-                    <label><span data-t="yCoefficient">y 系数</span><input id="sb2" type="number" inputmode="decimal" step="any" value="-1" required /></label><span class="operator">y =</span>
+                    <label><span data-t="yCoefficient">y 系数</span><input id="sb2" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">y =</span>
                     <label><span data-t="systemConstant">常数</span><input id="sc2" type="number" inputmode="decimal" step="any" value="2" required /></label>
                   </div>
                 </div>
@@ -170,8 +170,8 @@
             <section class="calculator-panel" id="panel-parabola-line">
               <div class="panel-heading"><div><p class="kicker">y = ax² + bx + c · y = mx + k / Ax + By + C = 0</p><h2 data-t="parabolaLineTitle">抛物线与直线交点</h2><p data-t="parabolaLineHint">输入抛物线，并选择直线的斜截式或一般式。</p></div><span class="badge" data-t="coordinateGeometry">坐标几何</span></div>
               <form id="parabolaLineForm" class="calc-form">
-                <div class="equation-block"><strong data-t="parabola">抛物线</strong><div class="equation-inputs three-inputs"><label><span data-t="coefficientA">系数 a</span><input id="pla" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x² +</span><label><span data-t="coefficientB">系数 b</span><input id="plb" type="number" inputmode="decimal" step="any" value="0" required /></label><span class="operator">x +</span><label><span data-t="constantC">常数 c</span><input id="plc" type="number" inputmode="decimal" step="any" value="-1" required /></label></div></div>
-                <div class="equation-block"><strong data-t="straightLine">直线</strong><div class="segmented input-mode-switch" role="group" aria-label="Line input form"><button class="active" data-pl-line-mode="slope" type="button" data-t="slopeIntercept">斜截式</button><button data-pl-line-mode="general" type="button" data-t="generalForm">一般式</button></div><div id="parabolaSlopeLine" class="equation-inputs"><span class="operator">y =</span><label><span data-t="slopeM">斜率 m</span><input id="plm" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x +</span><label><span data-t="interceptK">截距 k</span><input id="plk" type="number" inputmode="decimal" step="any" value="1" required /></label></div><div id="parabolaGeneralLine" class="equation-inputs three-inputs hidden"><label><span data-t="lineA">系数 A</span><input id="plga" type="number" inputmode="decimal" step="any" value="1" required disabled /></label><span class="operator">x +</span><label><span data-t="lineB">系数 B</span><input id="plgb" type="number" inputmode="decimal" step="any" value="-1" required disabled /></label><span class="operator">y +</span><label><span data-t="lineC">常数 C</span><input id="plgc" type="number" inputmode="decimal" step="any" value="1" required disabled /></label><span class="operator">= 0</span></div></div>
+                <div class="equation-block"><strong data-t="parabola">抛物线</strong><div class="equation-inputs three-inputs"><label><span data-t="coefficientA">系数 a</span><input id="pla" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x² +</span><label><span data-t="coefficientB">系数 b</span><input id="plb" type="number" inputmode="decimal" step="any" value="0" required /></label><span class="operator">x +</span><label><span data-t="constantC">常数 c</span><input id="plc" type="number" inputmode="decimal" step="any" value="1" required /></label></div></div>
+                <div class="equation-block"><strong data-t="straightLine">直线</strong><div class="segmented input-mode-switch" role="group" aria-label="Line input form"><button class="active" data-pl-line-mode="slope" type="button" data-t="slopeIntercept">斜截式</button><button data-pl-line-mode="general" type="button" data-t="generalForm">一般式</button></div><div id="parabolaSlopeLine" class="equation-inputs"><span class="operator">y =</span><label><span data-t="slopeM">斜率 m</span><input id="plm" type="number" inputmode="decimal" step="any" value="1" required /></label><span class="operator">x +</span><label><span data-t="interceptK">截距 k</span><input id="plk" type="number" inputmode="decimal" step="any" value="1" required /></label></div><div id="parabolaGeneralLine" class="equation-inputs three-inputs hidden"><label><span data-t="lineA">系数 A</span><input id="plga" type="number" inputmode="decimal" step="any" value="1" required disabled /></label><span class="operator">x +</span><label><span data-t="lineB">系数 B</span><input id="plgb" type="number" inputmode="decimal" step="any" value="1" required disabled /></label><span class="operator">y +</span><label><span data-t="lineC">常数 C</span><input id="plgc" type="number" inputmode="decimal" step="any" value="1" required disabled /></label><span class="operator">= 0</span></div></div>
                 <button class="calculate-button" type="submit"><span data-t="findIntersections">求交点</span><b>→</b></button>
               </form>
               <div class="result-box" id="parabolaLineResult" aria-live="polite"></div>
@@ -205,10 +205,9 @@
 
       <footer><span>HK SciCalc</span><p data-t="footerText">计算结果仅供学习与核对，请记得写出步骤。</p><span>Made for students · 2026</span></footer>
     </div>
-    <div class="sign-picker hidden" id="signPicker" role="group" aria-label="Choose positive or negative">
-      <span class="sign-picker-label" data-t="defaultPositive">默认：正数</span>
-      <button type="button" id="signToggle"><b>＋/−</b><span data-t="toggleSign">改变正负</span></button>
+    <div class="sign-picker hidden" id="signPicker">
+      <button type="button" id="signToggle" aria-label="切换正负 / Toggle sign"><b>＋/−</b></button>
     </div>
-    <script src="app.js?v=19"></script>
+    <script src="app.js?v=20"></script>
   </body>
 </html>

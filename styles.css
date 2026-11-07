@@ -133,11 +133,9 @@ input:focus { border-color:var(--lime-dark); box-shadow:0 0 0 3px rgba(200,244,6
 .result-answer { margin:5px 0 0; font:500 clamp(24px,4vw,38px) Georgia,serif; overflow-wrap:anywhere; }
 .copy-button { border:1px solid rgba(17,42,70,.18); background:white; border-radius:9px; padding:8px 11px; font-size:11px; font-weight:750; cursor:pointer; }
 .result-action-button { border:1px solid var(--ink); background:var(--ink); color:white; border-radius:9px; padding:8px 11px; font-size:11px; font-weight:750; cursor:pointer; }
-.sign-picker { position:fixed; z-index:100; display:flex; align-items:center; gap:6px; width:max-content; max-width:calc(100vw - 20px); padding:7px; border:1px solid rgba(17,42,70,.18); border-radius:13px; background:var(--card); box-shadow:0 12px 35px rgba(17,42,70,.22); }
-.sign-picker-label { padding:0 6px; color:var(--muted); font-size:11px; font-weight:800; white-space:nowrap; }
-.sign-picker button { display:flex; align-items:center; gap:5px; min-height:38px; border:1px solid var(--line); border-radius:9px; background:#f2f3ef; padding:7px 10px; color:var(--ink); font-size:11px; font-weight:800; cursor:pointer; }
-.sign-picker button b { font-size:19px; line-height:1; }
-.sign-picker button span { white-space:nowrap; }
+.sign-picker { position:fixed; z-index:100; display:flex; width:max-content; padding:5px; border:1px solid rgba(17,42,70,.18); border-radius:12px; background:var(--card); box-shadow:0 12px 35px rgba(17,42,70,.22); }
+.sign-picker button { display:flex; align-items:center; justify-content:center; width:54px; min-height:44px; border:1px solid var(--line); border-radius:9px; background:#f2f3ef; padding:7px; color:var(--ink); font-weight:800; cursor:pointer; }
+.sign-picker button b { font-size:21px; line-height:1; }
 .sign-picker button.active { border-color:var(--ink); background:var(--ink); color:white; }
 .steps { margin:17px 0 0; padding-top:15px; border-top:1px dashed rgba(17,42,70,.18); color:var(--muted); font:14px/1.75 ui-monospace, SFMono-Regular, Menlo, monospace; }
 .dual-results { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
