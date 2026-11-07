@@ -3,7 +3,7 @@ const translations = {
     tagline: "你的随身数学工具", eyebrow: "为香港高中数学而设", heroTitle: "忘了带科学计算机？<br /><em>照样解得到。</em>", heroBody: "方程、坐标图、三角形与组合数学，一站算清。答案连步骤，温习也方便。",
     tabEquation: "方程", tabTriangle: "三角形", tabGraphs: "图形", tabCombi: "组合", quadraticTitle: "一元二次方程", cubicTitle: "一元三次方程", simultaneousTitle: "二元一次联立方程", heronTitle: "希罗公式", cosineTitle: "余弦定理", triangleCentersTitle: "三点求四心", parabolaLineTitle: "抛物线与直线交点", circleLineTitle: "圆与直线交点", combiTitle: "排列与组合",
     quadraticHint: "输入系数 a、b 和常数 c。", cubicHint: "输入系数 a、b、c 和常数 d，答案以小数显示。", simultaneousHint: "输入两条一次方程，求 x 和 y。", heronHint: "已知三边，求三角形面积。", cosineHint: "选择求边长或角度。", centersHint: "输入三点坐标，求重心、外心、内心和垂心。", combiHint: "输入非负整数，获得完整精确答案。",
-    exact: "根式", decimal: "小数", vertexForm: "顶点式", showExact: "以根号表示", showDecimal: "小数表示", coefficientA: "系数 a", coefficientB: "系数 b", coefficientC: "系数 c", constantC: "常数 c", constantD: "常数 d", solve: "计算答案", decimalRoots: "小数根", exactInteger: "精确整数",
+    exact: "根式", decimal: "小数", vertexForm: "顶点式", showExact: "以根号表示", showDecimal: "小数表示", chooseSign: "选择正负", positiveNumber: "正数", negativeNumber: "负数", coefficientA: "系数 a", coefficientB: "系数 b", coefficientC: "系数 c", constantC: "常数 c", constantD: "常数 d", solve: "计算答案", decimalRoots: "小数根", exactInteger: "精确整数",
     sideA: "边 a", sideB: "边 b", sideC: "边 c", angleC: "角 C（度）", findArea: "求面积", findSide: "求边 c", findAngle: "求角 C", calculate: "计算", calculateBoth: "计算 nCr 与 nPr", equation1: "方程 1", equation2: "方程 2", xCoefficient: "x 系数", yCoefficient: "y 系数", systemConstant: "常数", solveSystem: "解联立方程",
     coordinateGeometry: "坐标几何", pointA: "点 A", pointB: "点 B", pointC: "点 C", findCenters: "计算四心与圆", centroid: "重心 G", circumcenter: "外心 O", incenter: "内心 I", orthocenter: "垂心 H", circumcircle: "外接圆", incircle: "内切圆", radius: "半径", showGraph: "显示坐标图", vertex: "顶点", axisOfSymmetry: "对称轴", triangleDiagramCaption: "边 a、b、c 分别位于角 A、B、C 的对面",
     parabolaLineHint: "输入抛物线，并选择直线的斜截式或一般式。", circleLineHint: "选择圆心与半径或圆的一般式，再输入直线求交点。", parabola: "抛物线", straightLine: "直线", circle: "圆", slopeIntercept: "斜截式", generalForm: "一般式", centerRadius: "圆心＋半径", circleGeneralForm: "圆的一般式", slopeM: "斜率 m", interceptK: "截距 k", centerH: "圆心 h", centerK: "圆心 k", radiusR: "半径 r", circleD: "系数 D", circleE: "系数 E", circleF: "常数 F", lineA: "系数 A", lineB: "系数 B", lineC: "常数 C", findIntersections: "求交点", intersection: "交点", intersections: "交点", tangentPoint: "切点", noRealIntersections: "没有实数交点。", invalidLine: "直线的 A 和 B 不能同时为 0。", invalidRadius: "半径必须大于 0。", invalidCircleGeneral: "这个一般式不能构成半径大于 0 的实圆。", derivedCenter: "换算圆心",
@@ -13,7 +13,7 @@ const translations = {
     tagline: "Maths in your pocket", eyebrow: "Made for Hong Kong secondary maths", heroTitle: "Forgot your scientific calculator?<br /><em>Keep solving.</em>", heroBody: "Equations, coordinate graphs, triangles and combinatorics in one place—with working steps that make revision easier.",
     tabEquation: "Equations", tabTriangle: "Triangles", tabGraphs: "Graphs", tabCombi: "nCr / nPr", quadraticTitle: "Quadratic equation", cubicTitle: "Cubic equation", simultaneousTitle: "Simultaneous linear equations", heronTitle: "Heron's formula", cosineTitle: "Cosine rule", triangleCentersTitle: "Four triangle centres", parabolaLineTitle: "Parabola–line intersections", circleLineTitle: "Circle–line intersections", combiTitle: "Permutations & combinations",
     quadraticHint: "Enter coefficients a, b and constant c.", cubicHint: "Enter coefficients a, b, c and constant d. Roots are shown as decimals.", simultaneousHint: "Enter two linear equations to find x and y.", heronHint: "Find a triangle's area from three sides.", cosineHint: "Choose whether to find a side or an angle.", centersHint: "Enter three coordinates to find the centroid, circumcenter, incenter and orthocenter.", combiHint: "Enter non-negative integers for a complete exact answer.",
-    exact: "Exact", decimal: "Decimal", vertexForm: "Vertex form", showExact: "Show exact roots", showDecimal: "Show decimals", coefficientA: "Coefficient a", coefficientB: "Coefficient b", coefficientC: "Coefficient c", constantC: "Constant c", constantD: "Constant d", solve: "Solve", decimalRoots: "Decimal roots", exactInteger: "Exact integer",
+    exact: "Exact", decimal: "Decimal", vertexForm: "Vertex form", showExact: "Show exact roots", showDecimal: "Show decimals", chooseSign: "Choose sign", positiveNumber: "Positive", negativeNumber: "Negative", coefficientA: "Coefficient a", coefficientB: "Coefficient b", coefficientC: "Coefficient c", constantC: "Constant c", constantD: "Constant d", solve: "Solve", decimalRoots: "Decimal roots", exactInteger: "Exact integer",
     sideA: "Side a", sideB: "Side b", sideC: "Side c", angleC: "Angle C (degrees)", findArea: "Find area", findSide: "Find side c", findAngle: "Find angle C", calculate: "Calculate", calculateBoth: "Calculate nCr & nPr", equation1: "Equation 1", equation2: "Equation 2", xCoefficient: "x coefficient", yCoefficient: "y coefficient", systemConstant: "Constant", solveSystem: "Solve equations",
     coordinateGeometry: "Coordinate geometry", pointA: "Point A", pointB: "Point B", pointC: "Point C", findCenters: "Find centres & circles", centroid: "Centroid G", circumcenter: "Circumcenter O", incenter: "Incenter I", orthocenter: "Orthocenter H", circumcircle: "Circumcircle", incircle: "Incircle", radius: "Radius", showGraph: "Show coordinate graph", vertex: "Vertex", axisOfSymmetry: "Axis of symmetry", triangleDiagramCaption: "Sides a, b and c lie opposite angles A, B and C respectively",
     parabolaLineHint: "Enter a parabola, then choose slope-intercept or general form for the line.", circleLineHint: "Choose centre and radius or the circle's general form, then enter a line.", parabola: "Parabola", straightLine: "Line", circle: "Circle", slopeIntercept: "Slope-intercept", generalForm: "General form", centerRadius: "Centre & radius", circleGeneralForm: "Circle general form", slopeM: "Slope m", interceptK: "Intercept k", centerH: "Centre h", centerK: "Centre k", radiusR: "Radius r", circleD: "Coefficient D", circleE: "Coefficient E", circleF: "Constant F", lineA: "Coefficient A", lineB: "Coefficient B", lineC: "Constant C", findIntersections: "Find intersections", intersection: "Intersection", intersections: "Intersections", tangentPoint: "Tangent point", noRealIntersections: "There are no real intersections.", invalidLine: "Line coefficients A and B cannot both be 0.", invalidRadius: "The radius must be greater than 0.", invalidCircleGeneral: "This general form does not define a real circle with radius greater than 0.", derivedCenter: "Derived centre",
@@ -98,41 +98,67 @@ function updateCosineLabel() {
 }
 
 function n(id) { return Number($(id).value); }
-function addSignControls() {
-  $$('input[type="number"]:not([min])').forEach((input) => {
-    if (input.closest('.signed-number')) return;
-    const wrapper=document.createElement('div');
-    wrapper.className='signed-number';
-    input.before(wrapper); wrapper.append(input);
-    input.closest('label')?.classList.add('signed-label');
-    const button=document.createElement('button');
-    button.type='button'; button.className='sign-toggle'; button.textContent='±';
-    button.setAttribute('aria-label','切换正负 / Toggle positive or negative');
-    wrapper.append(button);
-    const setNegative=(negative) => {
-      wrapper.dataset.negative=negative ? 'true' : 'false';
-      button.classList.toggle('active',negative);
-      button.setAttribute('aria-pressed',negative ? 'true' : 'false');
-    };
-    setNegative(Number(input.value) < 0);
-    button.addEventListener('click',() => {
-      const currentlyNegative=wrapper.dataset.negative === 'true';
-      const nextNegative=!currentlyNegative;
-      const value=Number(input.value);
-      setNegative(nextNegative);
-      if (input.value !== '' && Number.isFinite(value) && value !== 0) input.value=String(nextNegative ? -Math.abs(value) : Math.abs(value));
-      input.dispatchEvent(new Event('input',{bubbles:true}));
-      input.dispatchEvent(new Event('change',{bubbles:true}));
-      input.focus({preventScroll:true});
-    });
+let activeSignedInput=null;
+function setupSignPicker() {
+  const picker=$('#signPicker');
+  const inputs=$$('input[type="number"]:not([min])');
+  const choiceButtons=$$('[data-sign-choice]');
+  const update=() => {
+    if (!activeSignedInput) return;
+    const negative=activeSignedInput.dataset.pendingSign === 'negative' || Number(activeSignedInput.value) < 0;
+    choiceButtons.forEach((button) => button.classList.toggle('active',(button.dataset.signChoice === 'negative') === negative));
+  };
+  const position=() => {
+    if (!activeSignedInput || picker.classList.contains('hidden')) return;
+    const rect=activeSignedInput.getBoundingClientRect();
+    const viewport=window.visualViewport;
+    const viewTop=viewport?.offsetTop || 0, viewBottom=viewTop+(viewport?.height || window.innerHeight);
+    const width=picker.offsetWidth, height=picker.offsetHeight;
+    const left=Math.max(10,Math.min(rect.left,window.innerWidth-width-10));
+    let top=rect.bottom+8;
+    if (top+height>viewBottom-8) top=rect.top-height-8;
+    picker.style.left=`${left}px`; picker.style.top=`${Math.max(viewTop+8,top)}px`;
+  };
+  const open=(input) => {
+    activeSignedInput=input;
+    if (!input.dataset.pendingSign) input.dataset.pendingSign=Number(input.value)<0 ? 'negative' : 'positive';
+    picker.classList.remove('hidden'); update(); position();
+  };
+  const close=() => { picker.classList.add('hidden'); activeSignedInput=null; };
+  inputs.forEach((input) => {
+    input.addEventListener('focus',() => open(input));
+    input.addEventListener('pointerdown',() => open(input));
     input.addEventListener('input',() => {
       const value=Number(input.value);
-      if (!Number.isFinite(value) || input.value === '') return;
-      if (wrapper.dataset.negative === 'true' && value > 0) input.value=String(-value);
-      else if (value < 0) setNegative(true);
-      else if (value > 0) setNegative(false);
+      if (input.value !== '' && Number.isFinite(value)) {
+        if (input.dataset.pendingSign === 'negative' && value>0) input.value=String(-value);
+        else if (value<0) input.dataset.pendingSign='negative';
+        else if (value>0) input.dataset.pendingSign='positive';
+      }
+      update(); position();
     });
   });
+  choiceButtons.forEach((button) => {
+    button.addEventListener('pointerdown',(event) => event.preventDefault());
+    button.addEventListener('click',() => {
+      if (!activeSignedInput) return;
+      const input=activeSignedInput;
+      const negative=button.dataset.signChoice === 'negative';
+      const value=Number(input.value);
+      input.dataset.pendingSign=negative ? 'negative' : 'positive';
+      if (input.value !== '' && Number.isFinite(value) && value!==0) input.value=String(negative ? -Math.abs(value) : Math.abs(value));
+      input.dispatchEvent(new Event('change',{bubbles:true}));
+      input.focus({preventScroll:true}); close();
+    });
+  });
+  document.addEventListener('focusin',(event) => {
+    if (inputs.includes(event.target)) open(event.target);
+    else if (!picker.contains(event.target)) close();
+  });
+  window.addEventListener('scroll',position,true);
+  window.addEventListener('resize',position);
+  window.visualViewport?.addEventListener('resize',position);
+  window.visualViewport?.addEventListener('scroll',position);
 }
 function fmt(value, digits = 8) {
   if (Math.abs(value) < 1e-12) value = 0;
@@ -556,6 +582,6 @@ function recalculateVisible() {
   if (!active) return;
   ({'panel-quadratic':solveQuadratic,'panel-cubic':solveCubic,'panel-simultaneous':solveSimultaneous,'panel-heron':solveHeron,'panel-cosine':solveCosine,'panel-centers':solveCenters,'panel-parabola-line':solveParabolaLine,'panel-circle-line':solveCircleLine,'panel-combinatorics':solveCombi}[active.id] || (()=>{}))();
 }
-addSignControls();
+setupSignPicker();
 solveQuadratic();
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
