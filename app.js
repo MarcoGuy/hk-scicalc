@@ -98,6 +98,42 @@ function updateCosineLabel() {
 }
 
 function n(id) { return Number($(id).value); }
+function addSignControls() {
+  $$('input[type="number"]:not([min])').forEach((input) => {
+    if (input.closest('.signed-number')) return;
+    const wrapper=document.createElement('div');
+    wrapper.className='signed-number';
+    input.before(wrapper); wrapper.append(input);
+    input.closest('label')?.classList.add('signed-label');
+    const button=document.createElement('button');
+    button.type='button'; button.className='sign-toggle'; button.textContent='±';
+    button.setAttribute('aria-label','切换正负 / Toggle positive or negative');
+    wrapper.append(button);
+    const setNegative=(negative) => {
+      wrapper.dataset.negative=negative ? 'true' : 'false';
+      button.classList.toggle('active',negative);
+      button.setAttribute('aria-pressed',negative ? 'true' : 'false');
+    };
+    setNegative(Number(input.value) < 0);
+    button.addEventListener('click',() => {
+      const currentlyNegative=wrapper.dataset.negative === 'true';
+      const nextNegative=!currentlyNegative;
+      const value=Number(input.value);
+      setNegative(nextNegative);
+      if (input.value !== '' && Number.isFinite(value) && value !== 0) input.value=String(nextNegative ? -Math.abs(value) : Math.abs(value));
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+      input.dispatchEvent(new Event('change',{bubbles:true}));
+      input.focus({preventScroll:true});
+    });
+    input.addEventListener('input',() => {
+      const value=Number(input.value);
+      if (!Number.isFinite(value) || input.value === '') return;
+      if (wrapper.dataset.negative === 'true' && value > 0) input.value=String(-value);
+      else if (value < 0) setNegative(true);
+      else if (value > 0) setNegative(false);
+    });
+  });
+}
 function fmt(value, digits = 8) {
   if (Math.abs(value) < 1e-12) value = 0;
   return Number(value.toPrecision(digits)).toString();
@@ -520,5 +556,6 @@ function recalculateVisible() {
   if (!active) return;
   ({'panel-quadratic':solveQuadratic,'panel-cubic':solveCubic,'panel-simultaneous':solveSimultaneous,'panel-heron':solveHeron,'panel-cosine':solveCosine,'panel-centers':solveCenters,'panel-parabola-line':solveParabolaLine,'panel-circle-line':solveCircleLine,'panel-combinatorics':solveCombi}[active.id] || (()=>{}))();
 }
+addSignControls();
 solveQuadratic();
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));

@@ -74,6 +74,11 @@ button { color: inherit; }
 label span { display:block; margin-bottom:8px; color:var(--muted); font-size:11px; font-weight:750; text-transform:uppercase; letter-spacing:.06em; }
 input { width:100%; border:1px solid #ccd1cd; border-radius:11px; background:white; color:var(--ink); padding:13px 12px; outline:none; font-weight:700; font-size:18px; transition:.18s ease; }
 input:focus { border-color:var(--lime-dark); box-shadow:0 0 0 3px rgba(200,244,61,.28); }
+.signed-number { position:relative; width:100%; }
+.signed-number input { padding-left:42px; }
+.sign-toggle { position:absolute; z-index:1; left:4px; top:4px; bottom:4px; width:31px; border:0; border-radius:8px; background:#eef0ec; color:var(--ink); font-weight:850; cursor:pointer; }
+.sign-toggle.active { background:var(--ink); color:white; }
+.sign-toggle:focus-visible { outline:2px solid var(--lime-dark); outline-offset:2px; }
 .operator { padding-bottom:13px; font:italic 18px Georgia,serif; white-space:nowrap; }
 .field-grid { display:grid; gap:13px; }
 .field-grid.three { grid-template-columns:repeat(3,1fr); }
@@ -160,7 +165,7 @@ footer p { margin:0; text-align:center; }
   .equation-inputs { flex-wrap:nowrap; align-items:flex-end; gap:5px; overflow-x:auto; padding-bottom:5px; scrollbar-width:thin; }
   .equation-inputs label { width:68px; min-width:68px; }
   .equation-inputs .operator { padding-bottom:13px; font-size:14px; }
-  #quadraticForm .equation-inputs { overflow-x:hidden; }
+  #quadraticForm .equation-inputs { overflow-x:auto; }
   #quadraticForm .equation-inputs label { width:54px; min-width:54px; }
   #quadraticForm .equation-inputs input { padding-inline:8px; }
   .field-grid.three { grid-template-columns:1fr; }
@@ -169,6 +174,8 @@ footer p { margin:0; text-align:center; }
   .linear-row > strong { min-width:58px; }
   .linear-row label { width:68px; min-width:68px; }
   .linear-row input { padding-inline:8px; }
+  .equation-inputs label.signed-label, #quadraticForm .equation-inputs label.signed-label, .linear-row label.signed-label { width:82px; min-width:82px; }
+  .signed-number input { padding-left:39px; padding-right:8px; }
   .points-grid { grid-template-columns:1fr; }
   .point-card { grid-template-columns:1fr 1fr; }
   .centers-results { grid-template-columns:1fr; }
